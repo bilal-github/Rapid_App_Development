@@ -1,0 +1,9 @@
+C:\Users\834650\source\repos\Checkout\Checkout\bin\Debug\Checkout.exe.config
+C:\Users\834650\source\repos\Checkout\Checkout\bin\Debug\Checkout.exe
+C:\Users\834650\source\repos\Checkout\Checkout\bin\Debug\Checkout.pdb
+C:\Users\834650\source\repos\Checkout\Checkout\obj\Debug\Checkout.csprojAssemblyReference.cache
+C:\Users\834650\source\repos\Checkout\Checkout\obj\Debug\Checkout.frmCheckout.resources
+C:\Users\834650\source\repos\Checkout\Checkout\obj\Debug\Checkout.Properties.Resources.resources
+C:\Users\834650\source\repos\Checkout\Checkout\obj\Debug\Checkout.csproj.GenerateResource.cache
+C:\Users\834650\source\repos\Checkout\Checkout\obj\Debug\Checkout.exe
+C:\Users\834650\source\repos\Checkout\Checkout\obj\Debug\Checkout.pdb

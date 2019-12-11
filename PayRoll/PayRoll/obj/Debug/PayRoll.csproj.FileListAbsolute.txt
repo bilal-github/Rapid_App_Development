@@ -1,0 +1,9 @@
+C:\Users\834650\source\repos\PayRoll\PayRoll\bin\Debug\PayRoll.exe.config
+C:\Users\834650\source\repos\PayRoll\PayRoll\bin\Debug\PayRoll.exe
+C:\Users\834650\source\repos\PayRoll\PayRoll\bin\Debug\PayRoll.pdb
+C:\Users\834650\source\repos\PayRoll\PayRoll\obj\Debug\PayRoll.csprojAssemblyReference.cache
+C:\Users\834650\source\repos\PayRoll\PayRoll\obj\Debug\PayRoll.frmPayRoll.resources
+C:\Users\834650\source\repos\PayRoll\PayRoll\obj\Debug\PayRoll.Properties.Resources.resources
+C:\Users\834650\source\repos\PayRoll\PayRoll\obj\Debug\PayRoll.csproj.GenerateResource.cache
+C:\Users\834650\source\repos\PayRoll\PayRoll\obj\Debug\PayRoll.exe
+C:\Users\834650\source\repos\PayRoll\PayRoll\obj\Debug\PayRoll.pdb

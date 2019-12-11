@@ -1,0 +1,9 @@
+C:\Users\834650\source\repos\IncomeTax\IncomeTax\bin\Debug\IncomeTax.exe.config
+C:\Users\834650\source\repos\IncomeTax\IncomeTax\bin\Debug\IncomeTax.exe
+C:\Users\834650\source\repos\IncomeTax\IncomeTax\bin\Debug\IncomeTax.pdb
+C:\Users\834650\source\repos\IncomeTax\IncomeTax\obj\Debug\IncomeTax.csprojAssemblyReference.cache
+C:\Users\834650\source\repos\IncomeTax\IncomeTax\obj\Debug\IncomeTax.Form1.resources
+C:\Users\834650\source\repos\IncomeTax\IncomeTax\obj\Debug\IncomeTax.Properties.Resources.resources
+C:\Users\834650\source\repos\IncomeTax\IncomeTax\obj\Debug\IncomeTax.csproj.GenerateResource.cache
+C:\Users\834650\source\repos\IncomeTax\IncomeTax\obj\Debug\IncomeTax.exe
+C:\Users\834650\source\repos\IncomeTax\IncomeTax\obj\Debug\IncomeTax.pdb
