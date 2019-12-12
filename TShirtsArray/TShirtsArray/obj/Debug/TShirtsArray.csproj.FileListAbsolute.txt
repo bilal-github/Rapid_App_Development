@@ -1,0 +1,9 @@
+C:\Users\834650\source\repos\TShirtsArray\TShirtsArray\bin\Debug\TShirtsArray.exe.config
+C:\Users\834650\source\repos\TShirtsArray\TShirtsArray\bin\Debug\TShirtsArray.exe
+C:\Users\834650\source\repos\TShirtsArray\TShirtsArray\bin\Debug\TShirtsArray.pdb
+C:\Users\834650\source\repos\TShirtsArray\TShirtsArray\obj\Debug\TShirtsArray.csprojAssemblyReference.cache
+C:\Users\834650\source\repos\TShirtsArray\TShirtsArray\obj\Debug\TShirtsArray.Form1.resources
+C:\Users\834650\source\repos\TShirtsArray\TShirtsArray\obj\Debug\TShirtsArray.Properties.Resources.resources
+C:\Users\834650\source\repos\TShirtsArray\TShirtsArray\obj\Debug\TShirtsArray.csproj.GenerateResource.cache
+C:\Users\834650\source\repos\TShirtsArray\TShirtsArray\obj\Debug\TShirtsArray.exe
+C:\Users\834650\source\repos\TShirtsArray\TShirtsArray\obj\Debug\TShirtsArray.pdb
