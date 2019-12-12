@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BilalAhmad_CPRG200_Lab1
 {
-    public partial class Form1 : Form
+    public partial class CustomerBill : Form
     {
-        public Form1()
+        public CustomerBill()
         {
             InitializeComponent();
 

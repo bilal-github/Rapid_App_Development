@@ -1,6 +1,6 @@
 ﻿namespace BilalAhmad_CPRG200_Lab1
 {
-    partial class Form1
+    partial class CustomerBill
     {
         /// <summary>
         /// Required designer variable.
@@ -254,7 +254,7 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Copyright © 2019";
             // 
-            // Form1
+            // CustomerBill
             // 
             this.AcceptButton = this.btnCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -278,7 +278,7 @@
             this.Controls.Add(this.lblEnergyUsed);
             this.Controls.Add(this.txtEnergy);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "CustomerBill";
             this.Text = "Customer Bill";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
