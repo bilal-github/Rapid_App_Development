@@ -16,7 +16,7 @@ namespace BilalAhmad_CPRG200_Lab1
         {
             InitializeComponent();
 
-           
+
 
             lblPeakHours.Visible = false;
             lblOffPeakHours.Visible = false;
@@ -28,98 +28,114 @@ namespace BilalAhmad_CPRG200_Lab1
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            decimal residentialBase = 6.00m;
-            decimal commercialFlatRAte = 60.00m;
-            decimal INDUSTRIAL_PEAK_FLAT_RATE = 76.00m;
-            decimal INDUSTRIAL_OFF_PEAK_FLAT_RATE = 40.00m;
+            const decimal RESIDENTIAL_BASE = 6.00m;
+            const decimal COMMERCIAL_FLAT_RATE = 60.00m;
+            const decimal INDUSTRIAL_PEAK_FLAT_RATE = 76.00m;
+            const decimal INDUSTRIAL_OFF_PEAK_FLAT_RATE = 40.00m;
 
 
-            decimal energyUsedUnderFlat = 1000;
+            const decimal ENERGY_USED_UNDER_FLAT = 1000;
+
+            const decimal RESIDENTIAL_UNIT_RATE = 0.052m;
+            const decimal COMMERCIAL_UNIT_RATE = 0.045m;
+            const decimal PEAK_UNIT_RATE = 0.065m;
+            const decimal OFF_PEAK_UNIT_RATE = 0.028m;
+
             decimal energyUsedOverFlat = 0;
+
+
 
             decimal unitRate = 0;
             decimal chargeAmount = 0;
             if (radResidential.Checked || radCommercial.Checked)
             {
-                decimal energyUsed = Convert.ToDecimal(txtEnergy.Text);
-
-
-                if (radResidential.Checked)
+                if (Validator.IsPresent(txtEnergy, "Energy Used") && Validator.IsNonNegativeInt32(txtEnergy, "Energy Used"))
                 {
-
-                    unitRate = Convert.ToDecimal(0.052);
-
-                    chargeAmount = residentialBase + (unitRate * energyUsed);
-                }
-                else if (radCommercial.Checked)
-                {
-                    if (energyUsed <= 1000)
+                    decimal energyUsed = Convert.ToDecimal(txtEnergy.Text);
+                    if (radResidential.Checked)
                     {
-                        chargeAmount = commercialFlatRAte;
+                        chargeAmount = calculateChargeAmount(RESIDENTIAL_BASE, energyUsed, RESIDENTIAL_UNIT_RATE);
                     }
-                    else
+                    else if (radCommercial.Checked)
                     {
+                       
+                        if (energyUsed <= ENERGY_USED_UNDER_FLAT)
+                        {
+                            chargeAmount = COMMERCIAL_FLAT_RATE;
+                        }
+                        else
+                        {
+                            energyUsedOverFlat = energyUsed - ENERGY_USED_UNDER_FLAT;
 
-                        energyUsedOverFlat = energyUsed - energyUsedUnderFlat;
-                        unitRate = Convert.ToDecimal(0.045);
-
-                        chargeAmount = commercialFlatRAte + (energyUsedOverFlat * unitRate);
-
-
+                            chargeAmount = calculateChargeAmount(COMMERCIAL_FLAT_RATE, energyUsedOverFlat, COMMERCIAL_UNIT_RATE);
+                        }
                     }
+                    displayAmount(chargeAmount);
                 }
+
             }
             else if (radIndustrial.Checked)
             {
-
-                decimal peakHours = Convert.ToDecimal(txtPeakHours.Text);
-                decimal offPeakHours = Convert.ToDecimal(txtOffPeakHours.Text);
-
-                decimal peakHoursEnergyOverFlat = peakHours - energyUsedUnderFlat;
-                decimal OffPeakHoursOverFlat = offPeakHours - energyUsedUnderFlat;
-
-                decimal peakUnitRate = 0.065m;
-                decimal offPeakUnitRate = 0.028m;
-
-                decimal peakChargeAmount = 0;
-                decimal offPeakChargeAmount = 0;
-
-                if (peakHours <= 1000)
+                if (Validator.IsPresent(txtPeakHours, "Peak Hours") && Validator.IsNonNegativeInt32(txtPeakHours, "Peak Hours") &&
+                    Validator.IsPresent(txtOffPeakHours, "Off-Peak Hours") && Validator.IsNonNegativeInt32(txtOffPeakHours, "Off-Peak Hours"))
                 {
-                    
-                    peakChargeAmount = INDUSTRIAL_PEAK_FLAT_RATE;
+                    decimal peakHours = Convert.ToDecimal(txtPeakHours.Text);
+                    decimal offPeakHours = Convert.ToDecimal(txtOffPeakHours.Text);
+
+                    decimal peakHoursEnergyOverFlat = peakHours - ENERGY_USED_UNDER_FLAT;
+                    decimal OffPeakHoursOverFlat = offPeakHours - ENERGY_USED_UNDER_FLAT;
+
+                    decimal peakChargeAmount = 0;
+                    decimal offPeakChargeAmount = 0;
+
+                   if (peakHours <= ENERGY_USED_UNDER_FLAT)
+                    {
+
+                        peakChargeAmount = INDUSTRIAL_PEAK_FLAT_RATE;
+                    }
+                    else
+                    {
+                        peakChargeAmount = calculateChargeAmount(INDUSTRIAL_PEAK_FLAT_RATE, peakHoursEnergyOverFlat, PEAK_UNIT_RATE);
+                    }
+
+                    if (offPeakHours <= ENERGY_USED_UNDER_FLAT)
+                    {
+                        offPeakChargeAmount = INDUSTRIAL_OFF_PEAK_FLAT_RATE;
+                    }
+                    else
+                    {
+                        offPeakChargeAmount = calculateChargeAmount(INDUSTRIAL_OFF_PEAK_FLAT_RATE, OffPeakHoursOverFlat, OFF_PEAK_UNIT_RATE);
+                    }
+
+                    //if (peakHours == 0 || peakHours == null)
+                    //{
+                    //    peakChargeAmount = 0;
+                    //}
+                    //if (offPeakHours == 0 || offPeakHours == null)
+                    //{
+                    //    offPeakChargeAmount = 0;
+                    //}
+
+                    chargeAmount = peakChargeAmount + offPeakChargeAmount;
+                    displayAmount(chargeAmount);
                 }
-                else
-                {
-                    peakChargeAmount = INDUSTRIAL_PEAK_FLAT_RATE + (peakHoursEnergyOverFlat * peakUnitRate);
-                }
 
-                if (offPeakHours <= 1000)
-                {
-                    offPeakChargeAmount = INDUSTRIAL_OFF_PEAK_FLAT_RATE;
-
-                }
-                else
-                {
-                    offPeakChargeAmount = INDUSTRIAL_OFF_PEAK_FLAT_RATE + (OffPeakHoursOverFlat * offPeakUnitRate);
-                }
-
-                if(peakHours == 0 || peakHours == null)
-                {
-                    peakChargeAmount = 0;
-                } 
-                if(offPeakHours == 0 || offPeakHours == null)
-                {
-                    offPeakChargeAmount = 0;
-                }
-
-                chargeAmount = peakChargeAmount + offPeakChargeAmount;
 
             }
+            
+        }
+
+        private void displayAmount(decimal chargeAmount)
+        {
             txtAmount.Text = chargeAmount.ToString("c");
 
+        }
 
+        private decimal calculateChargeAmount(decimal flatRate, decimal energyChargeByUnit, decimal unitRate)
+        {
+            decimal chargeAmount = flatRate + (energyChargeByUnit * unitRate);
 
+            return chargeAmount;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
