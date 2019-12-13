@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Bilal Ahmad
+ * Date: December 07, 2019
+ * Purpose: Class that holds all of the validation for inputs. 
+ *  checks for value present, positive and negative and the type of the input (int, double or decimal)
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +16,7 @@ namespace BilalAhmad_CPRG200_Lab1
     //repository of validation methods
     public static class Validator
     {
+        // method to check if fields have input
         public static bool IsPresent(TextBox tb, string name)
         {
             bool valid = true; // tb has input
@@ -23,6 +30,7 @@ namespace BilalAhmad_CPRG200_Lab1
             return valid;
         }//ends IsPresent method
 
+        // method to check if value is in int32
         public static bool IsInt32(TextBox tb, string name)
         {
             bool valid = true;
@@ -38,6 +46,7 @@ namespace BilalAhmad_CPRG200_Lab1
             return valid;
         }
 
+        // method to check the value is a positive int32
         public static bool IsNonNegativeInt32(TextBox tb, string name)
         {
             bool valid = true;
@@ -53,13 +62,14 @@ namespace BilalAhmad_CPRG200_Lab1
             else if (val < 0) // negative
             {
                 valid = false;
-                MessageBox.Show(name + " Must be positive or zero");
+                MessageBox.Show(name + " Must be positive or zero", "Negative Input Error");
                 tb.SelectAll();
                 tb.Focus();
             }
             return valid;
         }
 
+        // method to check the value is a double
         public static bool IsDouble(TextBox tb, string name)
         {
             bool valid = true;
@@ -76,7 +86,7 @@ namespace BilalAhmad_CPRG200_Lab1
         }
 
         
-
+        // method to check the value is a positive double 
         public static bool IsNonNegativeDouble(TextBox tb, string name)
         {
             bool valid = true;
@@ -92,13 +102,14 @@ namespace BilalAhmad_CPRG200_Lab1
             else if (val < 0) // negative
             {
                 valid = false;
-                MessageBox.Show(name + " Must be positive or zero");
+                MessageBox.Show(name + " Must be positive or zero", "Negative Input Error");
                 tb.SelectAll();
                 tb.Focus();
             }
             return valid;
         }
 
+        //method to check if the number is a decimal
         public static bool IsDecimal(TextBox tb, string name)
         {
             bool valid = true;
@@ -113,6 +124,8 @@ namespace BilalAhmad_CPRG200_Lab1
             }
             return valid;
         }
+
+        // method to check if the value is a positive decimal
         public static bool IsNonNegativeDecimal(TextBox tb, string name)
         {
             bool valid = true;
@@ -128,11 +141,12 @@ namespace BilalAhmad_CPRG200_Lab1
             else if (val < 0) // negative
             {
                 valid = false;
-                MessageBox.Show(name + " Must be positive or zero");
+                MessageBox.Show(name + " Must be positive or zero", "Negative Input Error");
                 tb.SelectAll();
                 tb.Focus();
             }
             return valid;
         }
+
     }//ends class
 }//ends namespace

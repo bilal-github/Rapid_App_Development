@@ -193,7 +193,7 @@
             // 
             this.lblPeakHourskwh.AutoSize = true;
             this.lblPeakHourskwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeakHourskwh.Location = new System.Drawing.Point(420, 106);
+            this.lblPeakHourskwh.Location = new System.Drawing.Point(479, 106);
             this.lblPeakHourskwh.Name = "lblPeakHourskwh";
             this.lblPeakHourskwh.Size = new System.Drawing.Size(60, 29);
             this.lblPeakHourskwh.TabIndex = 11;
@@ -202,26 +202,26 @@
             // lblPeakHours
             // 
             this.lblPeakHours.AutoSize = true;
-            this.lblPeakHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeakHours.Location = new System.Drawing.Point(53, 104);
+            this.lblPeakHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeakHours.Location = new System.Drawing.Point(4, 104);
             this.lblPeakHours.Name = "lblPeakHours";
-            this.lblPeakHours.Size = new System.Drawing.Size(150, 29);
+            this.lblPeakHours.Size = new System.Drawing.Size(240, 25);
             this.lblPeakHours.TabIndex = 10;
-            this.lblPeakHours.Text = "Peak Hours: ";
+            this.lblPeakHours.Text = "Peak Hours Energy used: ";
             // 
             // txtPeakHours
             // 
             this.txtPeakHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPeakHours.Location = new System.Drawing.Point(239, 101);
+            this.txtPeakHours.Location = new System.Drawing.Point(308, 101);
             this.txtPeakHours.Name = "txtPeakHours";
-            this.txtPeakHours.Size = new System.Drawing.Size(175, 34);
+            this.txtPeakHours.Size = new System.Drawing.Size(165, 34);
             this.txtPeakHours.TabIndex = 3;
             // 
             // lblOffPeakkwh
             // 
             this.lblOffPeakkwh.AutoSize = true;
             this.lblOffPeakkwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOffPeakkwh.Location = new System.Drawing.Point(420, 153);
+            this.lblOffPeakkwh.Location = new System.Drawing.Point(479, 153);
             this.lblOffPeakkwh.Name = "lblOffPeakkwh";
             this.lblOffPeakkwh.Size = new System.Drawing.Size(60, 29);
             this.lblOffPeakkwh.TabIndex = 14;
@@ -230,19 +230,19 @@
             // lblOffPeakHours
             // 
             this.lblOffPeakHours.AutoSize = true;
-            this.lblOffPeakHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOffPeakHours.Location = new System.Drawing.Point(24, 153);
+            this.lblOffPeakHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOffPeakHours.Location = new System.Drawing.Point(4, 153);
             this.lblOffPeakHours.Name = "lblOffPeakHours";
-            this.lblOffPeakHours.Size = new System.Drawing.Size(201, 29);
+            this.lblOffPeakHours.Size = new System.Drawing.Size(281, 25);
             this.lblOffPeakHours.TabIndex = 13;
-            this.lblOffPeakHours.Text = "Off - Peak Hours: ";
+            this.lblOffPeakHours.Text = "Off - Peak Hours energy used: ";
             // 
             // txtOffPeakHours
             // 
             this.txtOffPeakHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOffPeakHours.Location = new System.Drawing.Point(239, 148);
+            this.txtOffPeakHours.Location = new System.Drawing.Point(308, 148);
             this.txtOffPeakHours.Name = "txtOffPeakHours";
-            this.txtOffPeakHours.Size = new System.Drawing.Size(175, 34);
+            this.txtOffPeakHours.Size = new System.Drawing.Size(165, 34);
             this.txtOffPeakHours.TabIndex = 4;
             // 
             // label1
