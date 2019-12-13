@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms; // for MessageBox
 
-namespace BilalAhmad_CPRG200_Lab1
+namespace ProductInventory
 {
     //repository of validation methods
     public static class Validator

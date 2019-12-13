@@ -1,0 +1,6 @@
+C:\Users\834650\source\repos\Employees\Employees\bin\Debug\Employees.exe.config
+C:\Users\834650\source\repos\Employees\Employees\bin\Debug\Employees.exe
+C:\Users\834650\source\repos\Employees\Employees\bin\Debug\Employees.pdb
+C:\Users\834650\source\repos\Employees\Employees\obj\Debug\Employees.csprojAssemblyReference.cache
+C:\Users\834650\source\repos\Employees\Employees\obj\Debug\Employees.exe
+C:\Users\834650\source\repos\Employees\Employees\obj\Debug\Employees.pdb
