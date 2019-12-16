@@ -1,0 +1,9 @@
+C:\Users\834650\source\repos\CardShuffler\CardShuffler\obj\Debug\CardShuffler.csprojAssemblyReference.cache
+C:\Users\834650\source\repos\CardShuffler\CardShuffler\obj\Debug\CardShuffler.Form1.resources
+C:\Users\834650\source\repos\CardShuffler\CardShuffler\obj\Debug\CardShuffler.Properties.Resources.resources
+C:\Users\834650\source\repos\CardShuffler\CardShuffler\obj\Debug\CardShuffler.csproj.GenerateResource.cache
+C:\Users\834650\source\repos\CardShuffler\CardShuffler\bin\Debug\CardShuffler.exe.config
+C:\Users\834650\source\repos\CardShuffler\CardShuffler\bin\Debug\CardShuffler.exe
+C:\Users\834650\source\repos\CardShuffler\CardShuffler\bin\Debug\CardShuffler.pdb
+C:\Users\834650\source\repos\CardShuffler\CardShuffler\obj\Debug\CardShuffler.exe
+C:\Users\834650\source\repos\CardShuffler\CardShuffler\obj\Debug\CardShuffler.pdb
