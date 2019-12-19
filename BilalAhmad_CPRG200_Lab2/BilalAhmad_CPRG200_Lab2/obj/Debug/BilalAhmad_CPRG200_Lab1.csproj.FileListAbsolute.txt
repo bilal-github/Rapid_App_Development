@@ -1,0 +1,10 @@
+C:\Users\834650\source\repos\BilalAhmad_CPRG200_Lab1\BilalAhmad_CPRG200_Lab1\bin\Debug\BilalAhmad_CPRG200_Lab1.exe.config
+C:\Users\834650\source\repos\BilalAhmad_CPRG200_Lab1\BilalAhmad_CPRG200_Lab1\bin\Debug\BilalAhmad_CPRG200_Lab1.exe
+C:\Users\834650\source\repos\BilalAhmad_CPRG200_Lab1\BilalAhmad_CPRG200_Lab1\bin\Debug\BilalAhmad_CPRG200_Lab1.pdb
+C:\Users\834650\source\repos\BilalAhmad_CPRG200_Lab1\BilalAhmad_CPRG200_Lab1\obj\Debug\BilalAhmad_CPRG200_Lab1.csprojAssemblyReference.cache
+C:\Users\834650\source\repos\BilalAhmad_CPRG200_Lab1\BilalAhmad_CPRG200_Lab1\obj\Debug\BilalAhmad_CPRG200_Lab1.Properties.Resources.resources
+C:\Users\834650\source\repos\BilalAhmad_CPRG200_Lab1\BilalAhmad_CPRG200_Lab1\obj\Debug\BilalAhmad_CPRG200_Lab1.csproj.GenerateResource.cache
+C:\Users\834650\source\repos\BilalAhmad_CPRG200_Lab1\BilalAhmad_CPRG200_Lab1\obj\Debug\BilalAhmad_CPRG200_Lab1.exe
+C:\Users\834650\source\repos\BilalAhmad_CPRG200_Lab1\BilalAhmad_CPRG200_Lab1\obj\Debug\BilalAhmad_CPRG200_Lab1.pdb
+C:\Users\834650\source\repos\BilalAhmad_CPRG200_Lab1\BilalAhmad_CPRG200_Lab1\obj\Debug\BilalAhmad_CPRG200_Lab1.CustomerBill.resources
+C:\Users\834650\source\repos\BilalAhmad_CPRG200_Lab1\BilalAhmad_CPRG200_Lab1\obj\Debug\BilalAhmad_CPRG200_Lab1.Welcome.resources
