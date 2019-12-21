@@ -24,6 +24,7 @@ namespace CustomerData
             this.commercialBaseUnitRate = comUnitRate;
             this.energyUsed = energyUsed;
 
+
             if (energyUsed >= 1000)
             {
                 energyExcess = energyUsed - 1000;

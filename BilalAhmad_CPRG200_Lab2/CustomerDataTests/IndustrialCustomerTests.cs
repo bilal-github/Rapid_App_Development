@@ -43,7 +43,7 @@ namespace CustomerData.Tests
             decimal actualCharge;
 
             //act
-            actualCharge = industrialCustomer.CalculateCharge(peakBase, unitRate, energyUsed-1000);
+            actualCharge = industrialCustomer.CalculateCharge(peakBase, unitRate, energyUsed);
 
             //assert
             Assert.AreEqual(expectedCharge, actualCharge);
@@ -84,7 +84,7 @@ namespace CustomerData.Tests
             /*energy used is -1000 because its a flat rate till 1000, any energy over 1000 will
              * be charged at the unit rate
              */
-            actualCharge = industrialCustomer.CalculateCharge(offPeakBase, unitRate, energyUsed-1000); 
+            actualCharge = industrialCustomer.CalculateCharge(offPeakBase, unitRate, energyUsed); 
 
             //assert
             Assert.AreEqual(expectedCharge, actualCharge);

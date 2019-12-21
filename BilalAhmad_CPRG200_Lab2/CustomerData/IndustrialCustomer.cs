@@ -31,20 +31,9 @@ namespace CustomerData
 
         }
 
-        public decimal CalculatePeakOrOffPeakCharge(decimal indBase, decimal unitRate, decimal energyUsed)
+        public decimal CalculateChargeAmount(decimal baseCharge, decimal unitRate, decimal energyUsed)
         {
-            this.flatPrice = indBase;
-            this.unitRate = unitRate;
-            this.energyUsed = energyUsed;
-            if (energyUsed >= 1000)
-            {
-                energyExcess = energyUsed - 1000;
-                chargeAmount = CalculateCharge(indBase, unitRate, energyExcess);
-            }
-            else
-            {
-                chargeAmount = CalculateCharge(indBase, unitRate, energyUsed);
-            }
+            chargeAmount = baseCharge + (unitRate * energyUsed);
 
             return chargeAmount;
         }
@@ -87,12 +76,25 @@ namespace CustomerData
 
 
         //calculate charge amount based on the base price, unit rate and energyused
-        public override decimal CalculateCharge(decimal baseCharge, decimal unitRate, decimal energyUsed)
-        {           
-
-            chargeAmount = baseCharge + (unitRate * energyUsed);
+        public override decimal CalculateCharge(decimal peakOrOffPeakBaseCharge, decimal unitRate, decimal energyUsed)
+        {
+            this.flatPrice = peakOrOffPeakBaseCharge;
+            this.unitRate = unitRate;
+            this.energyUsed = energyUsed;
+            if (energyUsed >= 1000)
+            {
+                energyExcess = energyUsed - 1000;
+                chargeAmount = CalculateChargeAmount(peakOrOffPeakBaseCharge, unitRate, energyExcess);
+            }
+            else
+            {
+                energyUsed = 0;//if under 1000, the energy is used at a flat rate.
+                chargeAmount = CalculateChargeAmount(peakOrOffPeakBaseCharge, unitRate, energyUsed);
+            }
 
             return chargeAmount;
+
+            
         }
     }
 }

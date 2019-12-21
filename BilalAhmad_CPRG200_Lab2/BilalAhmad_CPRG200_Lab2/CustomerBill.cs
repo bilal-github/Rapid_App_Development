@@ -5,6 +5,7 @@
  *      Residential, Commercial and Industrial.
  */
 using System;
+using CustomerData;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,14 +50,24 @@ namespace BilalAhmad_CPRG200_Lab2
 
         // When calculate button is clicked
         private void btnCalculate_Click(object sender, EventArgs e)
-        {      
+        {
             // local variables
-            decimal energyUsedOverFlat = 0; 
             decimal chargeAmount = 0;
+            int accountNo=0;
+            string customerName ="";
 
+
+            if (Validator.IsPresent(txtAccountNo, "Account No") && Validator.IsNonNegativeInt32(txtAccountNo, "Account No") &&
+                Validator.IsPresent(txtCustomerName, "Customer Name"))
+            {
+                accountNo = Convert.ToInt32(txtAccountNo.Text);
+                customerName = txtCustomerName.Text;
+            }
+            
             /* if residential or commercial customer type radio buttons are checked this if statement runs.
              * Since residential and commercial both use the same energy used field, they are both wrapped in one if statement
              * */
+
             if (radResidential.Checked || radCommercial.Checked)
             {
                 //validates if the field (Energy used) contains a value and then validates that the value is a positive whole number.
@@ -67,29 +78,22 @@ namespace BilalAhmad_CPRG200_Lab2
 
                     // when the residential customer type is selected
                     // calculates the amount charged by calling a method and passing in base rate, the energy units to charge and the rate per unit
-                    if (radResidential.Checked) 
+                    if (radResidential.Checked)
                     {
-                        chargeAmount = calculateChargeAmount(RESIDENTIAL_BASE, energyUsed, RESIDENTIAL_UNIT_RATE);
+                        Customer customer = new ResidentialCustomer(accountNo, customerName);
+
+                        chargeAmount = customer.CalculateCharge(RESIDENTIAL_BASE, RESIDENTIAL_UNIT_RATE, energyUsed);
+
                     }
 
                     // when commercial cusotmer type is selected
-                    
-                    else if (radCommercial.Checked) 
-                    {
-                        // energy used is less than or equal to 1000
-                        // the amount charged is a flat rate
-                        if (energyUsed <= ENERGY_USED_UNDER_FLAT) 
-                        {
-                            chargeAmount = COMMERCIAL_FLAT_RATE; 
-                        }
-                        // if more than 1000 units are used
-                        else
-                        {
-                            energyUsedOverFlat = energyUsed - ENERGY_USED_UNDER_FLAT; // calculates the units over 1000
 
-                            // amount charged is calculated by calling calculateChargeAmount method
-                            chargeAmount = calculateChargeAmount(COMMERCIAL_FLAT_RATE, energyUsedOverFlat, COMMERCIAL_UNIT_RATE);
-                        }
+                    else if (radCommercial.Checked)
+                    {
+                        Customer customer = new CommercialCustomer(accountNo, customerName);
+
+                        chargeAmount = customer.CalculateCharge(COMMERCIAL_FLAT_RATE, COMMERCIAL_UNIT_RATE, energyUsed);
+
                     }
 
                     // displays the amount charged by calling display amount and passing in the amount calculated in previous steps
@@ -112,38 +116,14 @@ namespace BilalAhmad_CPRG200_Lab2
                     decimal peakHours = Convert.ToDecimal(txtPeakHours.Text); // stores peak hours input from txtpeakhours textbox in a decimal peakhours variable
                     decimal offPeakHours = Convert.ToDecimal(txtOffPeakHours.Text); // stores off-peak hours input from txtoffpeakhours textbox in a decimal offpeakhours variable
 
-                    decimal peakHoursEnergyOverFlat = peakHours - ENERGY_USED_UNDER_FLAT; // calculates peak hours energy used units over the 1000
-                    decimal OffPeakHoursOverFlat = offPeakHours - ENERGY_USED_UNDER_FLAT; // calculates off-peak hours energy used units over the 1000
-
                     //initialize local peak and off-peak charge amount variables
                     decimal peakChargeAmount = 0; // variable to keep track of the peak energy used charge amount.
                     decimal offPeakChargeAmount = 0; // variable to keep track of the off- peak energy used charge amount 
 
-                    // when peak hours energy used is less than or equal to 1000,charge amount is a flat rate
-                    if (peakHours <= ENERGY_USED_UNDER_FLAT) 
-                    {
 
-                        peakChargeAmount = INDUSTRIAL_PEAK_FLAT_RATE;  
-                    }
-                    // if more peak hours energy is used
-                    // call calculatechargeabmount method and pass in parameters to calculate amount to charge.
-
-                    else
-                    {
-                        peakChargeAmount = calculateChargeAmount(INDUSTRIAL_PEAK_FLAT_RATE, peakHoursEnergyOverFlat, PEAK_UNIT_RATE);
-                    }
-                    // when off-peak hours energy used is less than or equal to 1000
-                    // off peak charge amount is a flat rate
-                    if (offPeakHours <= ENERGY_USED_UNDER_FLAT) 
-                    {
-                        offPeakChargeAmount = INDUSTRIAL_OFF_PEAK_FLAT_RATE; 
-                    }
-                    // if more than 1000 kwh is used
-                    // calls calculatechargeamount and passes in the variables to calculate amount to charge
-                    else
-                    {                        
-                        offPeakChargeAmount = calculateChargeAmount(INDUSTRIAL_OFF_PEAK_FLAT_RATE, OffPeakHoursOverFlat, OFF_PEAK_UNIT_RATE);
-                    }
+                    Customer customer = new IndustrialCustomer(accountNo, customerName);
+                    peakChargeAmount = customer.CalculateCharge(INDUSTRIAL_PEAK_FLAT_RATE, PEAK_UNIT_RATE, peakHours);
+                    offPeakChargeAmount = customer.CalculateCharge(INDUSTRIAL_OFF_PEAK_FLAT_RATE, OFF_PEAK_UNIT_RATE, offPeakHours);
 
                     // the total charge amount for industrial customer is the sum of the peak hours and off peak hours charge amount.
                     chargeAmount = peakChargeAmount + offPeakChargeAmount;
@@ -162,22 +142,18 @@ namespace BilalAhmad_CPRG200_Lab2
             txtAmount.Text = chargeAmount.ToString("c"); // changes the amount passed in and converts it to string of type currency and shows it in the txtAmount field.
         }
 
-        // this method calculates the charge amount and takes in three parameters: 
-        // The flat rate parameter is different for all customer types and 
-        // the energychargebyunit parameter is the energy used over the flat threshold,
-        // the unitRate is the price per unit (applied to excess energy only)
-        private decimal calculateChargeAmount(decimal flatRate, decimal energyChargeByUnit, decimal unitRate)
-        {
-            // the charge amount is calculated by multiplying the excess energy (energy over the flat threshold) by the unit rate 
-            // and then adding it to the flat rate.
-            decimal chargeAmount = flatRate + (energyChargeByUnit * unitRate);
+        /* this method calculates the charge amount and takes in three parameters: 
+        The flat rate parameter is different for all customer types and 
+         the energychargebyunit parameter is the energy used over the flat threshold,
+         the unitRate is the price per unit (applied to excess energy only)
+         */
 
-            return chargeAmount; // returns the calculated charge amount
-        }
 
         // clears all the fields to get ready for next calculation
         private void btnClear_Click(object sender, EventArgs e)
         {
+            txtAccountNo.Text = "";
+            txtCustomerName.Text = "";
             txtEnergy.Text = "";
             txtPeakHours.Text = "";
             txtOffPeakHours.Text = "";

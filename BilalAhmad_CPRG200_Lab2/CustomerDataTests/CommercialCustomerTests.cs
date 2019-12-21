@@ -39,6 +39,25 @@ namespace CustomerData.Tests
             Assert.AreEqual(expectedCharge, actualCharge);
         }
 
+        //test calculate if the energy used is between zero and 1000 kwh for commercial customer type.
+        [TestMethod()]
+        public void CalculateChargeZeroTo1000Amount()
+        {
+            //arrange
+            CommercialCustomer commercialCustomer = new CommercialCustomer(1, "john");
+            decimal comBase = 60m;
+            decimal unitRate = 0.045m;
+            decimal energyUsed = 10;
+            decimal expectedCharge = 60m;
+            decimal actualCharge;
+
+            //act
+            actualCharge = commercialCustomer.CalculateCharge(comBase, unitRate, energyUsed);
+
+            //assert
+            Assert.AreEqual(expectedCharge, actualCharge);
+        }
+
         //test calculate if the energy used is more than 1000kwh for commercial customer type.
         [TestMethod()]
         public void CalculateChargeOver1000Amount()
