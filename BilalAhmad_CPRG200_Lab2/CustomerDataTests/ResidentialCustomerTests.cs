@@ -25,13 +25,13 @@ namespace CustomerData.Tests
         public void CalculateChargeZeroAmount()
         {
             //arrange
-            ResidentialCustomer residentialCustomer = new ResidentialCustomer(1, "john");
+
             decimal resBase = 6m;
             decimal unitRate = 0.052m;
             decimal energyUsed = 0;
             decimal expectedCharge = 6m;
-            decimal actualCharge;
-
+            decimal actualCharge = 0;
+            ResidentialCustomer residentialCustomer = new ResidentialCustomer(1, "john", "R", actualCharge);
             //act
             actualCharge = residentialCustomer.CalculateCharge(resBase, unitRate, energyUsed);
 
@@ -44,13 +44,13 @@ namespace CustomerData.Tests
         public void CalculateChargeMoreThanZero()
         {
             //arrange
-            ResidentialCustomer residentialCustomer = new ResidentialCustomer(1, "john");
+
             decimal resBase = 6m;
             decimal unitRate = 0.052m;
             decimal energyUsed = 100;
             decimal expectedCharge = 11.2m;
-            decimal actualCharge;
-
+            decimal actualCharge = 0;
+            ResidentialCustomer residentialCustomer = new ResidentialCustomer(1, "john", "R", actualCharge);
             //act
             actualCharge = residentialCustomer.CalculateCharge(resBase, unitRate, energyUsed);
 

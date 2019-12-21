@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace CustomerData
 {
-    
+
     public class ResidentialCustomer : Customer
     {
         private decimal residentialBase;
         private decimal residentialBaseUnitRate;
+
         decimal energyUsed;
         decimal chargeAmount;
-        public ResidentialCustomer(int accountNo, string customerName) : base(accountNo, customerName)
+        public ResidentialCustomer(int accountNo, string customerName, string customerType, decimal chargeAmount) :
+            base(accountNo, customerName, customerType, chargeAmount)
         {
 
         }
@@ -27,6 +29,11 @@ namespace CustomerData
             chargeAmount = residentialBase + (residentialBaseUnitRate * energyUsed);
 
             return chargeAmount;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
 
     }

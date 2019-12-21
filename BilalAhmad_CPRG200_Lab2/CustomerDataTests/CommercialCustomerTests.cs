@@ -25,13 +25,13 @@ namespace CustomerData.Tests
         public void CalculateChargeZeroAmount()
         {
             //arrange
-            CommercialCustomer commercialCustomer = new CommercialCustomer(1, "john");
+
             decimal comBase = 60m;
             decimal unitRate = 0.045m;
             decimal energyUsed = 0;
             decimal expectedCharge = 60m;
-            decimal actualCharge;
-
+            decimal actualCharge = 0;
+            CommercialCustomer commercialCustomer = new CommercialCustomer(1, "john", "C", actualCharge);
             //act
             actualCharge = commercialCustomer.CalculateCharge(comBase, unitRate, energyUsed);
 
@@ -44,12 +44,13 @@ namespace CustomerData.Tests
         public void CalculateChargeZeroTo1000Amount()
         {
             //arrange
-            CommercialCustomer commercialCustomer = new CommercialCustomer(1, "john");
+
             decimal comBase = 60m;
             decimal unitRate = 0.045m;
             decimal energyUsed = 10;
             decimal expectedCharge = 60m;
-            decimal actualCharge;
+            decimal actualCharge = 0;
+            CommercialCustomer commercialCustomer = new CommercialCustomer(1, "john", "C", actualCharge);
 
             //act
             actualCharge = commercialCustomer.CalculateCharge(comBase, unitRate, energyUsed);
@@ -63,12 +64,12 @@ namespace CustomerData.Tests
         public void CalculateChargeOver1000Amount()
         {
             //arrange
-            CommercialCustomer commercialCustomer = new CommercialCustomer(1, "john");
             decimal comBase = 60m;
             decimal unitRate = 0.045m;
             decimal energyUsed = 1010;
             decimal expectedCharge = 60.45m;
-            decimal actualCharge;
+            decimal actualCharge = 0;
+            CommercialCustomer commercialCustomer = new CommercialCustomer(1, "john", "C", actualCharge);
 
             //act
             actualCharge = commercialCustomer.CalculateCharge(comBase, unitRate, energyUsed);

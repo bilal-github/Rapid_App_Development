@@ -8,16 +8,8 @@ namespace CustomerData
 {
     public class IndustrialCustomer : Customer
     {
-        //private decimal industrialPeakFlatRate;
-        //private decimal industrialOffPeakFlatRate;
-        //private decimal peakUnitRate;
-        //private decimal offPeakUnitRate;
+        const decimal ENERGY_USED_UNDER_FLAT = 1000; // the threshold for energy used under flat, excess will be charged by the unit
 
-        //private decimal peakEnergyExcess;
-        //private decimal peakEnergyCharge;
-
-        //private decimal offPeakEnergyExcess;
-        //private decimal offPeakEnergyCharge;
 
         private decimal flatPrice;
         private decimal unitRate;
@@ -26,7 +18,8 @@ namespace CustomerData
 
         decimal energyUsed;
         decimal chargeAmount;
-        public IndustrialCustomer(int accountNo, string customerName) : base(accountNo, customerName)
+        public IndustrialCustomer(int accountNo, string customerName, string customerType, decimal chargeAmount) :
+            base(accountNo, customerName, customerType, chargeAmount)
         {
 
         }
@@ -81,9 +74,9 @@ namespace CustomerData
             this.flatPrice = peakOrOffPeakBaseCharge;
             this.unitRate = unitRate;
             this.energyUsed = energyUsed;
-            if (energyUsed >= 1000)
+            if (energyUsed >= ENERGY_USED_UNDER_FLAT)
             {
-                energyExcess = energyUsed - 1000;
+                energyExcess = energyUsed - ENERGY_USED_UNDER_FLAT;
                 chargeAmount = CalculateChargeAmount(peakOrOffPeakBaseCharge, unitRate, energyExcess);
             }
             else

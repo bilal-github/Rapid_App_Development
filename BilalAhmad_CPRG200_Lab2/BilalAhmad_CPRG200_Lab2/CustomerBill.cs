@@ -20,13 +20,17 @@ namespace BilalAhmad_CPRG200_Lab2
     public partial class CustomerBill : Form
     {
         // Form level variables
+
+        List<Customer> customers = new List<Customer>();
+
+
         // constants 
         const decimal RESIDENTIAL_BASE = 6.00m; // residential base cost even if 0 kwh is used
         const decimal COMMERCIAL_FLAT_RATE = 60.00m; // flat rate for commercial energy usage for the first 1000kwh
         const decimal INDUSTRIAL_PEAK_FLAT_RATE = 76.00m; // flat rate for energy used during peak hours for the first 1000kwh
         const decimal INDUSTRIAL_OFF_PEAK_FLAT_RATE = 40.00m; // flat rate for energy used during off-peak hours for the first 1000kwh
 
-        const decimal ENERGY_USED_UNDER_FLAT = 1000; // the threshold for energy used under flat, excess will be charged by the unit
+        //const decimal ENERGY_USED_UNDER_FLAT = 1000; // the threshold for energy used under flat, excess will be charged by the unit
 
         const decimal RESIDENTIAL_UNIT_RATE = 0.052m;// unit rate for energy used
         const decimal COMMERCIAL_UNIT_RATE = 0.045m;// unit rate for energy used over 1000
@@ -53,8 +57,11 @@ namespace BilalAhmad_CPRG200_Lab2
         {
             // local variables
             decimal chargeAmount = 0;
-            int accountNo=0;
-            string customerName ="";
+            int accountNo = 0;
+            string customerName = "";
+
+            //inistializes new customer;
+            Customer customer;
 
 
             if (Validator.IsPresent(txtAccountNo, "Account No") && Validator.IsNonNegativeInt32(txtAccountNo, "Account No") &&
@@ -63,7 +70,7 @@ namespace BilalAhmad_CPRG200_Lab2
                 accountNo = Convert.ToInt32(txtAccountNo.Text);
                 customerName = txtCustomerName.Text;
             }
-            
+
             /* if residential or commercial customer type radio buttons are checked this if statement runs.
              * Since residential and commercial both use the same energy used field, they are both wrapped in one if statement
              * */
@@ -80,7 +87,7 @@ namespace BilalAhmad_CPRG200_Lab2
                     // calculates the amount charged by calling a method and passing in base rate, the energy units to charge and the rate per unit
                     if (radResidential.Checked)
                     {
-                        Customer customer = new ResidentialCustomer(accountNo, customerName);
+                        customer = new ResidentialCustomer(accountNo, customerName, "R", chargeAmount);
 
                         chargeAmount = customer.CalculateCharge(RESIDENTIAL_BASE, RESIDENTIAL_UNIT_RATE, energyUsed);
 
@@ -90,7 +97,7 @@ namespace BilalAhmad_CPRG200_Lab2
 
                     else if (radCommercial.Checked)
                     {
-                        Customer customer = new CommercialCustomer(accountNo, customerName);
+                        customer = new CommercialCustomer(accountNo, customerName, "C", chargeAmount);
 
                         chargeAmount = customer.CalculateCharge(COMMERCIAL_FLAT_RATE, COMMERCIAL_UNIT_RATE, energyUsed);
 
@@ -98,7 +105,7 @@ namespace BilalAhmad_CPRG200_Lab2
 
                     // displays the amount charged by calling display amount and passing in the amount calculated in previous steps
                     // which is then shown in the amount charge field
-                    displayAmount(chargeAmount);
+                    //displayAmount(chargeAmount);
                 }
 
             }
@@ -121,19 +128,102 @@ namespace BilalAhmad_CPRG200_Lab2
                     decimal offPeakChargeAmount = 0; // variable to keep track of the off- peak energy used charge amount 
 
 
-                    Customer customer = new IndustrialCustomer(accountNo, customerName);
+                    customer = new IndustrialCustomer(accountNo, customerName, "I", chargeAmount);
                     peakChargeAmount = customer.CalculateCharge(INDUSTRIAL_PEAK_FLAT_RATE, PEAK_UNIT_RATE, peakHours);
                     offPeakChargeAmount = customer.CalculateCharge(INDUSTRIAL_OFF_PEAK_FLAT_RATE, OFF_PEAK_UNIT_RATE, offPeakHours);
 
                     // the total charge amount for industrial customer is the sum of the peak hours and off peak hours charge amount.
                     chargeAmount = peakChargeAmount + offPeakChargeAmount;
 
-                    // calls displayamount method and passess in the total charge amount to be displayed in the amount charge field.
-                    displayAmount(chargeAmount);
                 }
 
             }
+            // calls displayamount method and passess in the total charge amount to be displayed in the amount charge field.
+            displayAmount(chargeAmount);
 
+
+        }
+
+        //Adds customer to the list
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            //local variables
+            int accountNo = 0;
+            string customerName = "";
+            string customerType = "";
+            decimal chargeAmount;
+            Customer customer;
+
+            if (Validator.IsPresent(txtAccountNo, "Account No") && Validator.IsNonNegativeInt32(txtAccountNo, "Account No") &&
+                Validator.IsPresent(txtCustomerName, "Customer Name") &&
+                Validator.IsPresent(txtAmount, "Charge Amount"))
+            {
+                accountNo = Convert.ToInt32(txtAccountNo.Text);
+                customerName = txtCustomerName.Text;
+                chargeAmount = Convert.ToDecimal(txtAmount.Text.Remove(0,1));
+                //tmpAmt = Convert.ToDecimal(tmp[3].Remove(0, 1));
+                //chargeAmount.ToString("c");
+
+                //
+                switch (Controls.OfType<RadioButton>().FirstOrDefault(rb => rb.Checked)?.Name)
+                {
+                    case "radResidential":
+                        customerType = "R";
+                        customer = new ResidentialCustomer(accountNo, customerName, customerType, chargeAmount);
+                        break;
+                    case "radCommercial":
+                        customerType = "C";
+                        customer = new CommercialCustomer(accountNo, customerName, customerType, chargeAmount);
+                        break;
+                    case "radIndustrial":
+                        customerType = "I";
+                        customer = new IndustrialCustomer(accountNo, customerName, customerType, chargeAmount);
+                        break;
+
+                    default:
+                        customerType = "R";
+                        customer = new ResidentialCustomer(accountNo, customerName, customerType, chargeAmount);
+                        break;
+                }
+                //
+                /*
+                if (radResidential.Checked)
+                {
+                    customerType = "R";
+                    customer = new ResidentialCustomer(accountNo, customerName, customerType, chargeAmount);
+                }
+                else if (radCommercial.Checked)
+                {
+                    customerType = "C";
+                    customer = new CommercialCustomer(accountNo, customerName, customerType, chargeAmount);
+                }
+                else
+                {
+                    customerType = "I";
+                    customer = new IndustrialCustomer(accountNo, customerName, customerType, chargeAmount);
+                }
+                */
+                
+
+                customers.Add(customer);
+                DisplayCustomers();
+
+
+
+            }
+
+        }
+        //display customers in the listbox
+        private void DisplayCustomers()
+        {
+            lstCustomers.Items.Clear();
+            foreach (Customer customer in customers)
+            {
+                lstCustomers.Items.Add(customer); // implicitly calls to ToString();
+
+            }
+            //lblCount.Text = products.Count.ToString();
+           // lblInventory.Text = calculateInventory().ToString("c");
         }
 
         // this method displays the passed in amount in the charge amount field in the form. 
@@ -171,18 +261,21 @@ namespace BilalAhmad_CPRG200_Lab2
         private void radResidential_CheckedChanged(object sender, EventArgs e)
         {
             displayFields("residential"); // calls display fields and passes the string "residential" to show only the required fields for residential customer type.
+            btnClear_Click(sender, e); // clears the form when changing between customer types
         }
 
         // when commercial radio button is checked
         private void radCommercial_CheckedChanged(object sender, EventArgs e)
         {
             displayFields("commercial"); // calls display field and passes the string "commercial" to show only the required fields for commercial customer type.
+            btnClear_Click(sender, e);// clears the form when changing between customer types
         }
 
         // when industrial customer type is checked
         private void radIndustrial_CheckedChanged(object sender, EventArgs e)
         {
             displayFields("industrial");// calls display field and passes the string "industrial" to show only the required fields for industrial customer type.
+            btnClear_Click(sender, e);// clears the form when changing between customer types
         }
 
         //method when called will display field according to the parameter (customertype) which is taken as a string
@@ -233,6 +326,10 @@ namespace BilalAhmad_CPRG200_Lab2
 
         }
 
+        private void CustomerBill_Load(object sender, EventArgs e)
+        {
+
+        }
     }//ends customberbill class
 
 }//ends namespace

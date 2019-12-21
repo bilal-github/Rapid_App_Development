@@ -10,13 +10,13 @@ namespace CustomerData
     {
         private int accountNo;
         private string customerName;
-        //private string customerType;
+        private string customerType;
 
         //private decimal basePrice;
         //private decimal unitRate;
         //private decimal energyUsed;
 
-        //private decimal chargeAmount;
+        private decimal chargeAmount;
 
         public Customer(int accountNo, string customerName)
         {
@@ -24,6 +24,20 @@ namespace CustomerData
             this.customerName = customerName;
         }
 
-        public abstract decimal CalculateCharge(decimal basePrice, decimal unitRate, decimal energyUsed);              
+        public Customer(int accountNo, string customerName, string customerType, decimal chargeAmount)
+        {
+            this.accountNo = accountNo;
+            this.customerName = customerName;
+            this.customerType = customerType;
+            this.chargeAmount = chargeAmount;
+        }
+
+
+        public abstract decimal CalculateCharge(decimal basePrice, decimal unitRate, decimal energyUsed);
+
+        public override string ToString()
+        {
+            return accountNo.ToString() + " , " + customerName + " , " + customerType + " , " + chargeAmount.ToString();
+        }
     }
 }

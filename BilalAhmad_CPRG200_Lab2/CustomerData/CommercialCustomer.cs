@@ -8,12 +8,15 @@ namespace CustomerData
 {
     public class CommercialCustomer : Customer
     {
+        const decimal ENERGY_USED_UNDER_FLAT = 1000; // the threshold for energy used under flat, excess will be charged by the unit
+
         private decimal commercialBase;
         private decimal commercialBaseUnitRate;
         private decimal energyExcess;
         decimal energyUsed;
         decimal chargeAmount;
-        public CommercialCustomer(int accountNo, string customerName) : base(accountNo, customerName)
+        public CommercialCustomer(int accountNo, string customerName, string customerType, decimal chargeAmount) :
+            base(accountNo, customerName, customerType, chargeAmount)
         {
 
         }
@@ -25,9 +28,9 @@ namespace CustomerData
             this.energyUsed = energyUsed;
 
 
-            if (energyUsed >= 1000)
+            if (energyUsed >= ENERGY_USED_UNDER_FLAT)
             {
-                energyExcess = energyUsed - 1000;
+                energyExcess = energyUsed - ENERGY_USED_UNDER_FLAT;
                 chargeAmount = comBase + (comUnitRate * energyExcess);
             }
             else

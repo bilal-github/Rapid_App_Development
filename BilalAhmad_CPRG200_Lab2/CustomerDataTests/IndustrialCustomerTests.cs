@@ -16,12 +16,12 @@ namespace CustomerData.Tests
         public void CalculatePeakZeroAmount()
         {
             //arrange
-            IndustrialCustomer industrialCustomer = new IndustrialCustomer(1, "john");
             decimal peakBase = 76m;
             decimal unitRate = 0.065m;
             decimal energyUsed = 0;
             decimal expectedCharge = 76m;
-            decimal actualCharge;
+            decimal actualCharge =0;
+            IndustrialCustomer industrialCustomer = new IndustrialCustomer(1, "john", "I", actualCharge);
 
             //act
             actualCharge = industrialCustomer.CalculateCharge(peakBase, unitRate, energyUsed);
@@ -35,12 +35,12 @@ namespace CustomerData.Tests
         public void CalculatePeakChargeOver1000Amount()
         {
             //arrange
-            IndustrialCustomer industrialCustomer = new IndustrialCustomer(1, "john");
             decimal peakBase = 76m;
             decimal unitRate = 0.065m;
             decimal energyUsed = 1010;
             decimal expectedCharge = 76.65m;
-            decimal actualCharge;
+            decimal actualCharge = 0;
+            IndustrialCustomer industrialCustomer = new IndustrialCustomer(1, "john", "I", actualCharge);
 
             //act
             actualCharge = industrialCustomer.CalculateCharge(peakBase, unitRate, energyUsed);
@@ -54,12 +54,13 @@ namespace CustomerData.Tests
         public void CalculateOffPeakZeroAmount()
         {
             //arrange
-            IndustrialCustomer industrialCustomer = new IndustrialCustomer(1, "john");
+           
             decimal offPeakBase = 40m;
             decimal unitRate = 0.028m;
             decimal energyUsed = 0;
             decimal expectedCharge = 40m;
-            decimal actualCharge;
+            decimal actualCharge = 0;
+            IndustrialCustomer industrialCustomer = new IndustrialCustomer(1, "john", "I", actualCharge);
 
             //act
             actualCharge = industrialCustomer.CalculateCharge(offPeakBase, unitRate, energyUsed);
@@ -73,12 +74,12 @@ namespace CustomerData.Tests
         public void CalculateOffPeakChargeOver1000Amount()
         {
             //arrange
-            IndustrialCustomer industrialCustomer = new IndustrialCustomer(1, "john");
             decimal offPeakBase = 40m;
             decimal unitRate = 0.028m;
             decimal energyUsed = 1010;
             decimal expectedCharge = 40.28m;
-            decimal actualCharge;
+            decimal actualCharge = 0;
+            IndustrialCustomer industrialCustomer = new IndustrialCustomer(1, "john", "I", actualCharge);
 
             //act
             /*energy used is -1000 because its a flat rate till 1000, any energy over 1000 will
