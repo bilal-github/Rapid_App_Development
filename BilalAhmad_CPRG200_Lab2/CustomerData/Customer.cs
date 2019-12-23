@@ -8,17 +8,22 @@ namespace CustomerData
 {
     public abstract class Customer
     {
-        private int accountNo;
-        private string customerName;
+        private int _accountNo;
+        private string _customerName;
         private string _customerType;
+        private decimal _chargeAmount;
 
-        //private decimal basePrice;
-        //private decimal unitRate;
-        //private decimal energyUsed;
-
-        private decimal chargeAmount;
-
-        public int accoutNo { get; set; }
+        public int accountNo
+        {
+            get
+            {
+                return _accountNo;
+            }
+            set
+            {
+                _accountNo = value;
+            }
+        }
         public string customerType
         {
             get
@@ -28,6 +33,28 @@ namespace CustomerData
             set
             {
                 _customerType = value;
+            }
+        }
+        public string customerName
+        {
+            get
+            {
+                return _customerName;
+            }
+            set
+            {
+                _customerName = value;
+            }
+        }
+        public decimal chargeAmount
+        {
+            get
+            {
+                return _chargeAmount;
+            }
+            set
+            {
+                _chargeAmount = value;
             }
         }
 
@@ -46,6 +73,7 @@ namespace CustomerData
             this.chargeAmount = chargeAmount;
         }
 
+        /*
         public string getCustomerType()
         {
 
@@ -67,7 +95,7 @@ namespace CustomerData
             return this.customerName;
         }
 
-
+        */
         public abstract decimal CalculateCharge(decimal basePrice, decimal unitRate, decimal energyUsed);
 
         public override string ToString()

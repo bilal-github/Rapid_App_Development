@@ -186,23 +186,20 @@ namespace BilalAhmad_CPRG200_Lab2
             decimal indChargeAmount = 0;
             foreach (Customer customer in customers)
             {
-                string customerType = customer.getCustomerType();
-                MessageBox.Show("using property: "+customer.customerType + " using Method: " + customer.getCustomerType());
-                
-                
+                string customerType = customer.customerType;                
 
                 if (customerType == "R")
                 {
                     
-                    resChargeAmount += customer.getChargeAmount();
+                    resChargeAmount += customer.chargeAmount;
                 }
                 else if (customerType == "C")
                 {
-                    comChargeAmount += customer.getChargeAmount();
+                    comChargeAmount += customer.chargeAmount;
                 }
                 else
                 {
-                    indChargeAmount += customer.getChargeAmount();
+                    indChargeAmount += customer.chargeAmount;
                 }
             }
             txtTotalNumberOfCustomers.Text = customers.Count.ToString();
@@ -306,7 +303,7 @@ namespace BilalAhmad_CPRG200_Lab2
                 lblEnergyUsedkwh.Visible = true;
 
                 // set the focus on the energy used textBox
-                txtEnergy.Focus();
+                txtAccountNo.Focus();
 
             }
 
@@ -344,6 +341,25 @@ namespace BilalAhmad_CPRG200_Lab2
         {
             CustomerDB.SaveCustomers(customers);
         }
+
+        private void txtCustomerName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            /*  e.KeyChar contains the character that was pressed
+             e.Handled is a boolean that indicates that handling is done            
+            if a bad character is entered, set e.Handled to true
+            */
+           Validator.IsNameString(txtCustomerName, "Customer Name", e);
+            /*
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != '-' &&
+              e.KeyChar != '.' && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+                MessageBox.Show("This field can only accept letters, space, - and .");
+            }
+            */
+        }
+
+
     }//ends customberbill class
 
 }//ends namespace

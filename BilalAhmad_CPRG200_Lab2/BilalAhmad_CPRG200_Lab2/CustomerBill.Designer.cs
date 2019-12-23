@@ -132,7 +132,7 @@
             this.txtEnergy.Location = new System.Drawing.Point(249, 172);
             this.txtEnergy.Name = "txtEnergy";
             this.txtEnergy.Size = new System.Drawing.Size(175, 34);
-            this.txtEnergy.TabIndex = 1;
+            this.txtEnergy.TabIndex = 3;
             // 
             // lblEnergyUsed
             // 
@@ -331,7 +331,7 @@
             this.txtAccountNo.Location = new System.Drawing.Point(140, 84);
             this.txtAccountNo.Name = "txtAccountNo";
             this.txtAccountNo.Size = new System.Drawing.Size(109, 34);
-            this.txtAccountNo.TabIndex = 19;
+            this.txtAccountNo.TabIndex = 1;
             // 
             // txtCustomerName
             // 
@@ -340,7 +340,8 @@
             this.txtCustomerName.Location = new System.Drawing.Point(431, 84);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(165, 34);
-            this.txtCustomerName.TabIndex = 21;
+            this.txtCustomerName.TabIndex = 2;
+            this.txtCustomerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerName_KeyPress);
             // 
             // label5
             // 
@@ -363,7 +364,7 @@
             this.btnAddCustomer.Location = new System.Drawing.Point(350, 268);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(199, 60);
-            this.btnAddCustomer.TabIndex = 22;
+            this.btnAddCustomer.TabIndex = 6;
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = false;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
