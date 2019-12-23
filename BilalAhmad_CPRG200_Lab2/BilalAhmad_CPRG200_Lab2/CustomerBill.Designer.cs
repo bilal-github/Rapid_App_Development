@@ -55,16 +55,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTotalNumberOfCustomers = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTotalIndCharges = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTotalComCharges = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTotalResCharges = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtTotalCharges = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +76,7 @@
             this.groupBox1.Controls.Add(this.radResidential);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(19, 14);
+            this.groupBox1.Location = new System.Drawing.Point(19, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(589, 64);
             this.groupBox1.TabIndex = 0;
@@ -299,7 +299,7 @@
             this.lstCustomers.ItemHeight = 20;
             this.lstCustomers.Location = new System.Drawing.Point(650, 49);
             this.lstCustomers.Name = "lstCustomers";
-            this.lstCustomers.Size = new System.Drawing.Size(338, 264);
+            this.lstCustomers.Size = new System.Drawing.Size(527, 264);
             this.lstCustomers.TabIndex = 16;
             // 
             // label2
@@ -373,91 +373,91 @@
             this.label6.AutoSize = true;
             this.label6.Cursor = System.Windows.Forms.Cursors.Default;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(570, 349);
+            this.label6.Location = new System.Drawing.Point(649, 349);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(208, 25);
             this.label6.TabIndex = 23;
             this.label6.Text = "Number of Customers:";
             // 
-            // textBox1
+            // txtTotalNumberOfCustomers
             // 
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(823, 343);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(165, 34);
-            this.textBox1.TabIndex = 24;
+            this.txtTotalNumberOfCustomers.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTotalNumberOfCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalNumberOfCustomers.Location = new System.Drawing.Point(902, 343);
+            this.txtTotalNumberOfCustomers.Name = "txtTotalNumberOfCustomers";
+            this.txtTotalNumberOfCustomers.ReadOnly = true;
+            this.txtTotalNumberOfCustomers.Size = new System.Drawing.Size(165, 34);
+            this.txtTotalNumberOfCustomers.TabIndex = 24;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Cursor = System.Windows.Forms.Cursors.Default;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(598, 500);
+            this.label7.Location = new System.Drawing.Point(677, 500);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(196, 25);
             this.label7.TabIndex = 25;
             this.label7.Text = "Industrial Customers:";
             // 
-            // textBox2
+            // txtTotalIndCharges
             // 
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(822, 494);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(165, 34);
-            this.textBox2.TabIndex = 26;
+            this.txtTotalIndCharges.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTotalIndCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalIndCharges.Location = new System.Drawing.Point(901, 494);
+            this.txtTotalIndCharges.Name = "txtTotalIndCharges";
+            this.txtTotalIndCharges.ReadOnly = true;
+            this.txtTotalIndCharges.Size = new System.Drawing.Size(165, 34);
+            this.txtTotalIndCharges.TabIndex = 26;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Cursor = System.Windows.Forms.Cursors.Default;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(598, 459);
+            this.label8.Location = new System.Drawing.Point(677, 459);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(222, 25);
             this.label8.TabIndex = 27;
             this.label8.Text = "Commercial Customers:";
             // 
-            // textBox3
+            // txtTotalComCharges
             // 
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(822, 453);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(165, 34);
-            this.textBox3.TabIndex = 28;
+            this.txtTotalComCharges.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTotalComCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalComCharges.Location = new System.Drawing.Point(901, 453);
+            this.txtTotalComCharges.Name = "txtTotalComCharges";
+            this.txtTotalComCharges.ReadOnly = true;
+            this.txtTotalComCharges.Size = new System.Drawing.Size(165, 34);
+            this.txtTotalComCharges.TabIndex = 28;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Cursor = System.Windows.Forms.Cursors.Default;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(598, 419);
+            this.label9.Location = new System.Drawing.Point(677, 419);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(213, 25);
             this.label9.TabIndex = 29;
             this.label9.Text = "Residential Customers:";
             // 
-            // textBox4
+            // txtTotalResCharges
             // 
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(823, 413);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(165, 34);
-            this.textBox4.TabIndex = 30;
+            this.txtTotalResCharges.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTotalResCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalResCharges.Location = new System.Drawing.Point(902, 413);
+            this.txtTotalResCharges.Name = "txtTotalResCharges";
+            this.txtTotalResCharges.ReadOnly = true;
+            this.txtTotalResCharges.Size = new System.Drawing.Size(165, 34);
+            this.txtTotalResCharges.TabIndex = 30;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Cursor = System.Windows.Forms.Cursors.Default;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(570, 387);
+            this.label10.Location = new System.Drawing.Point(649, 387);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(169, 25);
             this.label10.TabIndex = 31;
@@ -468,21 +468,21 @@
             this.label11.AutoSize = true;
             this.label11.Cursor = System.Windows.Forms.Cursors.Default;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(590, 573);
+            this.label11.Location = new System.Drawing.Point(669, 573);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(184, 25);
             this.label11.TabIndex = 32;
             this.label11.Text = "Sum of all Charges:";
             // 
-            // textBox5
+            // txtTotalCharges
             // 
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(823, 567);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(165, 34);
-            this.textBox5.TabIndex = 33;
+            this.txtTotalCharges.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtTotalCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalCharges.Location = new System.Drawing.Point(902, 567);
+            this.txtTotalCharges.Name = "txtTotalCharges";
+            this.txtTotalCharges.ReadOnly = true;
+            this.txtTotalCharges.Size = new System.Drawing.Size(165, 34);
+            this.txtTotalCharges.TabIndex = 33;
             // 
             // CustomerBill
             // 
@@ -491,17 +491,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CancelButton = this.btnClear;
-            this.ClientSize = new System.Drawing.Size(1138, 706);
-            this.Controls.Add(this.textBox5);
+            this.ClientSize = new System.Drawing.Size(1189, 622);
+            this.ControlBox = false;
+            this.Controls.Add(this.txtTotalCharges);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtTotalResCharges);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTotalComCharges);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtTotalIndCharges);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTotalNumberOfCustomers);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.txtCustomerName);
@@ -528,7 +529,9 @@
             this.Controls.Add(this.groupBox1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "CustomerBill";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Bill";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerBill_FormClosing);
             this.Load += new System.EventHandler(this.CustomerBill_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -566,16 +569,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTotalNumberOfCustomers;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTotalIndCharges;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTotalComCharges;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTotalResCharges;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtTotalCharges;
     }
 }
 

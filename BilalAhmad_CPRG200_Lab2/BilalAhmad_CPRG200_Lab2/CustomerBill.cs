@@ -20,9 +20,7 @@ namespace BilalAhmad_CPRG200_Lab2
     public partial class CustomerBill : Form
     {
         // Form level variables
-
         List<Customer> customers = new List<Customer>();
-
 
         // constants 
         const decimal RESIDENTIAL_BASE = 6.00m; // residential base cost even if 0 kwh is used
@@ -50,6 +48,9 @@ namespace BilalAhmad_CPRG200_Lab2
             txtOffPeakHours.Visible = false;
             lblPeakHourskwh.Visible = false;
             lblOffPeakkwh.Visible = false;
+
+            //show the headings in the list box
+            // lstCustomers.Items.Add(String.Format(customerDetails, "Account No", "Customer Name", "Type", "Charge Amount"));
         }
 
         // When calculate button is clicked
@@ -100,7 +101,6 @@ namespace BilalAhmad_CPRG200_Lab2
                         customer = new CommercialCustomer(accountNo, customerName, "C", chargeAmount);
 
                         chargeAmount = customer.CalculateCharge(COMMERCIAL_FLAT_RATE, COMMERCIAL_UNIT_RATE, energyUsed);
-
                     }
 
                     // displays the amount charged by calling display amount and passing in the amount calculated in previous steps
@@ -134,14 +134,10 @@ namespace BilalAhmad_CPRG200_Lab2
 
                     // the total charge amount for industrial customer is the sum of the peak hours and off peak hours charge amount.
                     chargeAmount = peakChargeAmount + offPeakChargeAmount;
-
                 }
-
             }
             // calls displayamount method and passess in the total charge amount to be displayed in the amount charge field.
             displayAmount(chargeAmount);
-
-
         }
 
         //Adds customer to the list
@@ -160,33 +156,8 @@ namespace BilalAhmad_CPRG200_Lab2
             {
                 accountNo = Convert.ToInt32(txtAccountNo.Text);
                 customerName = txtCustomerName.Text;
-                chargeAmount = Convert.ToDecimal(txtAmount.Text.Remove(0,1));
-                //tmpAmt = Convert.ToDecimal(tmp[3].Remove(0, 1));
-                //chargeAmount.ToString("c");
+                chargeAmount = Convert.ToDecimal(txtAmount.Text.Remove(0, 1));
 
-                //
-                switch (Controls.OfType<RadioButton>().FirstOrDefault(rb => rb.Checked)?.Name)
-                {
-                    case "radResidential":
-                        customerType = "R";
-                        customer = new ResidentialCustomer(accountNo, customerName, customerType, chargeAmount);
-                        break;
-                    case "radCommercial":
-                        customerType = "C";
-                        customer = new CommercialCustomer(accountNo, customerName, customerType, chargeAmount);
-                        break;
-                    case "radIndustrial":
-                        customerType = "I";
-                        customer = new IndustrialCustomer(accountNo, customerName, customerType, chargeAmount);
-                        break;
-
-                    default:
-                        customerType = "R";
-                        customer = new ResidentialCustomer(accountNo, customerName, customerType, chargeAmount);
-                        break;
-                }
-                //
-                /*
                 if (radResidential.Checked)
                 {
                     customerType = "R";
@@ -202,28 +173,64 @@ namespace BilalAhmad_CPRG200_Lab2
                     customerType = "I";
                     customer = new IndustrialCustomer(accountNo, customerName, customerType, chargeAmount);
                 }
-                */
-                
-
                 customers.Add(customer);
                 DisplayCustomers();
-
-
-
+                Statistics();
             }
+        }
 
+        private void Statistics()
+        {
+            decimal resChargeAmount = 0;
+            decimal comChargeAmount = 0;
+            decimal indChargeAmount = 0;
+            foreach (Customer customer in customers)
+            {
+                string customerType = customer.getCustomerType();
+                MessageBox.Show("using property: "+customer.customerType + " using Method: " + customer.getCustomerType());
+                
+                
+
+                if (customerType == "R")
+                {
+                    
+                    resChargeAmount += customer.getChargeAmount();
+                }
+                else if (customerType == "C")
+                {
+                    comChargeAmount += customer.getChargeAmount();
+                }
+                else
+                {
+                    indChargeAmount += customer.getChargeAmount();
+                }
+            }
+            txtTotalNumberOfCustomers.Text = customers.Count.ToString();
+            txtTotalResCharges.Text = resChargeAmount.ToString("c");
+            txtTotalComCharges.Text = comChargeAmount.ToString("c");
+            txtTotalIndCharges.Text = indChargeAmount.ToString("c");
+            txtTotalCharges.Text = (TotalCumulativeCharges(resChargeAmount, comChargeAmount, indChargeAmount)).ToString("c");
+        }
+
+        private decimal TotalCumulativeCharges(decimal resChargeAmount, decimal comChargeAmount, decimal indChargeAmount)
+        {
+            decimal totalCumulativeCharges = resChargeAmount + comChargeAmount + indChargeAmount;
+
+            return totalCumulativeCharges;
         }
         //display customers in the listbox
+        //private void DisplayCustomers(int accountNo, string customerName, string customerType, decimal chargeAmount)
         private void DisplayCustomers()
         {
+
             lstCustomers.Items.Clear();
+
             foreach (Customer customer in customers)
             {
                 lstCustomers.Items.Add(customer); // implicitly calls to ToString();
 
             }
-            //lblCount.Text = products.Count.ToString();
-           // lblInventory.Text = calculateInventory().ToString("c");
+
         }
 
         // this method displays the passed in amount in the charge amount field in the form. 
@@ -328,7 +335,14 @@ namespace BilalAhmad_CPRG200_Lab2
 
         private void CustomerBill_Load(object sender, EventArgs e)
         {
+            customers = CustomerDB.ReadCustomers();
+            DisplayCustomers();
+            Statistics();
+        }
 
+        private void CustomerBill_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CustomerDB.SaveCustomers(customers);
         }
     }//ends customberbill class
 
