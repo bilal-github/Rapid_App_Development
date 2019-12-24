@@ -257,17 +257,29 @@ namespace BilalAhmad_CPRG200_Lab2
 
             return selectedCustomer;
         }
-        
+
         //Deletes a customer
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-            Customer customer = GetSelectedCustomer();
-            if(customer != null)
+            if (GetSelectedCustomer() != null) // a customer is selected
             {
-                customers.Remove(customer);
+                Customer customer = GetSelectedCustomer();
+                DialogResult dr = MessageBox.Show("Are you sure you want deleted account No: " + customer.accountNo + " for Customer: " + customer.customerName,
+                    "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dr == DialogResult.Yes)
+                {
+                    if (customer != null)
+                    {
+                        customers.Remove(customer);
+                    }
+                    DisplayCustomers();
+                    Statistics();
+
+                }
             }
-            DisplayCustomers();
-            Statistics();
+
+
+
         }
 
         private decimal TotalCumulativeCharges(decimal resChargeAmount, decimal comChargeAmount, decimal indChargeAmount)
@@ -391,7 +403,7 @@ namespace BilalAhmad_CPRG200_Lab2
                 lblEnergyUsedkwh.Visible = false;
 
                 //set focus to PeakHours textBox
-                txtPeakHours.Focus();
+                txtAccountNo.Focus();
             }
 
 
@@ -419,7 +431,7 @@ namespace BilalAhmad_CPRG200_Lab2
 
         }
 
-        
+
     }//ends customberbill class
 
 }//ends namespace

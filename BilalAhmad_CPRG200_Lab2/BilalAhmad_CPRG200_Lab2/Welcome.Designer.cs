@@ -67,6 +67,7 @@
             this.ClientSize = new System.Drawing.Size(542, 410);
             this.Controls.Add(this.btnBegin);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Welcome";
             this.Text = "Welcome";
             this.ResumeLayout(false);

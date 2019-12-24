@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerBill));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radIndustrial = new System.Windows.Forms.RadioButton();
             this.radCommercial = new System.Windows.Forms.RadioButton();
@@ -66,7 +67,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtTotalCharges = new System.Windows.Forms.TextBox();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -76,8 +79,8 @@
             this.groupBox1.Controls.Add(this.radCommercial);
             this.groupBox1.Controls.Add(this.radResidential);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(19, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(589, 64);
             this.groupBox1.TabIndex = 0;
@@ -139,10 +142,10 @@
             // 
             this.lblEnergyUsed.AutoSize = true;
             this.lblEnergyUsed.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblEnergyUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnergyUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnergyUsed.Location = new System.Drawing.Point(58, 175);
             this.lblEnergyUsed.Name = "lblEnergyUsed";
-            this.lblEnergyUsed.Size = new System.Drawing.Size(158, 29);
+            this.lblEnergyUsed.Size = new System.Drawing.Size(131, 25);
             this.lblEnergyUsed.TabIndex = 2;
             this.lblEnergyUsed.Text = "Energy Used:";
             // 
@@ -150,10 +153,10 @@
             // 
             this.lblEnergyUsedkwh.AutoSize = true;
             this.lblEnergyUsedkwh.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblEnergyUsedkwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnergyUsedkwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnergyUsedkwh.Location = new System.Drawing.Point(430, 177);
             this.lblEnergyUsedkwh.Name = "lblEnergyUsedkwh";
-            this.lblEnergyUsedkwh.Size = new System.Drawing.Size(60, 29);
+            this.lblEnergyUsedkwh.Size = new System.Drawing.Size(53, 25);
             this.lblEnergyUsedkwh.TabIndex = 3;
             this.lblEnergyUsedkwh.Text = "kWh";
             // 
@@ -161,10 +164,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(193, 330);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(247, 333);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 29);
+            this.label3.Size = new System.Drawing.Size(156, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Charge Amount:";
             // 
@@ -172,10 +175,10 @@
             // 
             this.txtAmount.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(407, 327);
+            this.txtAmount.Location = new System.Drawing.Point(443, 327);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.ReadOnly = true;
-            this.txtAmount.Size = new System.Drawing.Size(175, 34);
+            this.txtAmount.Size = new System.Drawing.Size(151, 34);
             this.txtAmount.TabIndex = 6;
             // 
             // btnCalculate
@@ -186,7 +189,7 @@
             this.btnCalculate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCalculate.Location = new System.Drawing.Point(19, 314);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(161, 60);
+            this.btnCalculate.Size = new System.Drawing.Size(198, 60);
             this.btnCalculate.TabIndex = 5;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = false;
@@ -199,7 +202,7 @@
             this.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClear.Location = new System.Drawing.Point(72, 509);
+            this.btnClear.Location = new System.Drawing.Point(97, 509);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(177, 57);
             this.btnClear.TabIndex = 7;
@@ -213,9 +216,10 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClose.Location = new System.Drawing.Point(313, 509);
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.Location = new System.Drawing.Point(328, 509);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(177, 57);
+            this.btnClose.Size = new System.Drawing.Size(155, 57);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Exit";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -225,10 +229,10 @@
             // 
             this.lblPeakHourskwh.AutoSize = true;
             this.lblPeakHourskwh.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblPeakHourskwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeakHourskwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeakHourskwh.Location = new System.Drawing.Point(489, 177);
             this.lblPeakHourskwh.Name = "lblPeakHourskwh";
-            this.lblPeakHourskwh.Size = new System.Drawing.Size(60, 29);
+            this.lblPeakHourskwh.Size = new System.Drawing.Size(53, 25);
             this.lblPeakHourskwh.TabIndex = 11;
             this.lblPeakHourskwh.Text = "kWh";
             // 
@@ -256,10 +260,10 @@
             // 
             this.lblOffPeakkwh.AutoSize = true;
             this.lblOffPeakkwh.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblOffPeakkwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOffPeakkwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOffPeakkwh.Location = new System.Drawing.Point(489, 239);
             this.lblOffPeakkwh.Name = "lblOffPeakkwh";
-            this.lblOffPeakkwh.Size = new System.Drawing.Size(60, 29);
+            this.lblOffPeakkwh.Size = new System.Drawing.Size(53, 25);
             this.lblOffPeakkwh.TabIndex = 14;
             this.lblOffPeakkwh.Text = "kWh";
             // 
@@ -287,7 +291,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Location = new System.Drawing.Point(195, 577);
+            this.label1.Location = new System.Drawing.Point(217, 593);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 17);
             this.label1.TabIndex = 15;
@@ -300,7 +304,7 @@
             this.lstCustomers.ItemHeight = 20;
             this.lstCustomers.Location = new System.Drawing.Point(650, 49);
             this.lstCustomers.Name = "lstCustomers";
-            this.lstCustomers.Size = new System.Drawing.Size(527, 264);
+            this.lstCustomers.Size = new System.Drawing.Size(513, 264);
             this.lstCustomers.TabIndex = 16;
             // 
             // label2
@@ -375,7 +379,7 @@
             this.label6.AutoSize = true;
             this.label6.Cursor = System.Windows.Forms.Cursors.Default;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(649, 349);
+            this.label6.Location = new System.Drawing.Point(4, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(208, 25);
             this.label6.TabIndex = 23;
@@ -385,10 +389,10 @@
             // 
             this.txtTotalNumberOfCustomers.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtTotalNumberOfCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalNumberOfCustomers.Location = new System.Drawing.Point(902, 343);
+            this.txtTotalNumberOfCustomers.Location = new System.Drawing.Point(289, 20);
             this.txtTotalNumberOfCustomers.Name = "txtTotalNumberOfCustomers";
             this.txtTotalNumberOfCustomers.ReadOnly = true;
-            this.txtTotalNumberOfCustomers.Size = new System.Drawing.Size(165, 34);
+            this.txtTotalNumberOfCustomers.Size = new System.Drawing.Size(135, 34);
             this.txtTotalNumberOfCustomers.TabIndex = 24;
             // 
             // label7
@@ -396,7 +400,7 @@
             this.label7.AutoSize = true;
             this.label7.Cursor = System.Windows.Forms.Cursors.Default;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(677, 500);
+            this.label7.Location = new System.Drawing.Point(30, 177);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(196, 25);
             this.label7.TabIndex = 25;
@@ -406,10 +410,10 @@
             // 
             this.txtTotalIndCharges.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtTotalIndCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalIndCharges.Location = new System.Drawing.Point(901, 494);
+            this.txtTotalIndCharges.Location = new System.Drawing.Point(289, 171);
             this.txtTotalIndCharges.Name = "txtTotalIndCharges";
             this.txtTotalIndCharges.ReadOnly = true;
-            this.txtTotalIndCharges.Size = new System.Drawing.Size(165, 34);
+            this.txtTotalIndCharges.Size = new System.Drawing.Size(135, 34);
             this.txtTotalIndCharges.TabIndex = 26;
             // 
             // label8
@@ -417,7 +421,7 @@
             this.label8.AutoSize = true;
             this.label8.Cursor = System.Windows.Forms.Cursors.Default;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(677, 459);
+            this.label8.Location = new System.Drawing.Point(30, 136);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(222, 25);
             this.label8.TabIndex = 27;
@@ -427,10 +431,10 @@
             // 
             this.txtTotalComCharges.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtTotalComCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalComCharges.Location = new System.Drawing.Point(901, 453);
+            this.txtTotalComCharges.Location = new System.Drawing.Point(289, 130);
             this.txtTotalComCharges.Name = "txtTotalComCharges";
             this.txtTotalComCharges.ReadOnly = true;
-            this.txtTotalComCharges.Size = new System.Drawing.Size(165, 34);
+            this.txtTotalComCharges.Size = new System.Drawing.Size(135, 34);
             this.txtTotalComCharges.TabIndex = 28;
             // 
             // label9
@@ -438,7 +442,7 @@
             this.label9.AutoSize = true;
             this.label9.Cursor = System.Windows.Forms.Cursors.Default;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(677, 419);
+            this.label9.Location = new System.Drawing.Point(30, 96);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(213, 25);
             this.label9.TabIndex = 29;
@@ -448,10 +452,10 @@
             // 
             this.txtTotalResCharges.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtTotalResCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalResCharges.Location = new System.Drawing.Point(902, 413);
+            this.txtTotalResCharges.Location = new System.Drawing.Point(289, 90);
             this.txtTotalResCharges.Name = "txtTotalResCharges";
             this.txtTotalResCharges.ReadOnly = true;
-            this.txtTotalResCharges.Size = new System.Drawing.Size(165, 34);
+            this.txtTotalResCharges.Size = new System.Drawing.Size(135, 34);
             this.txtTotalResCharges.TabIndex = 30;
             // 
             // label10
@@ -459,7 +463,7 @@
             this.label10.AutoSize = true;
             this.label10.Cursor = System.Windows.Forms.Cursors.Default;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(649, 387);
+            this.label10.Location = new System.Drawing.Point(4, 64);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(169, 25);
             this.label10.TabIndex = 31;
@@ -470,7 +474,7 @@
             this.label11.AutoSize = true;
             this.label11.Cursor = System.Windows.Forms.Cursors.Default;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(669, 573);
+            this.label11.Location = new System.Drawing.Point(24, 247);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(184, 25);
             this.label11.TabIndex = 32;
@@ -480,10 +484,10 @@
             // 
             this.txtTotalCharges.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtTotalCharges.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalCharges.Location = new System.Drawing.Point(902, 567);
+            this.txtTotalCharges.Location = new System.Drawing.Point(289, 241);
             this.txtTotalCharges.Name = "txtTotalCharges";
             this.txtTotalCharges.ReadOnly = true;
-            this.txtTotalCharges.Size = new System.Drawing.Size(165, 34);
+            this.txtTotalCharges.Size = new System.Drawing.Size(135, 34);
             this.txtTotalCharges.TabIndex = 33;
             // 
             // btnDeleteCustomer
@@ -493,7 +497,7 @@
             this.btnDeleteCustomer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnDeleteCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteCustomer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(54, 400);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(35, 400);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(225, 60);
             this.btnDeleteCustomer.TabIndex = 34;
@@ -501,27 +505,37 @@
             this.btnDeleteCustomer.UseVisualStyleBackColor = false;
             this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtTotalCharges);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.txtTotalResCharges);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.txtTotalComCharges);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtTotalIndCharges);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.txtTotalNumberOfCustomers);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(651, 319);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(512, 291);
+            this.panel1.TabIndex = 35;
+            // 
             // CustomerBill
             // 
             this.AcceptButton = this.btnCalculate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.btnClear;
-            this.ClientSize = new System.Drawing.Size(1189, 622);
+            this.ClientSize = new System.Drawing.Size(1174, 622);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDeleteCustomer);
-            this.Controls.Add(this.txtTotalCharges);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtTotalResCharges);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtTotalComCharges);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtTotalIndCharges);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtTotalNumberOfCustomers);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.label5);
@@ -546,13 +560,16 @@
             this.Controls.Add(this.txtEnergy);
             this.Controls.Add(this.groupBox1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerBill";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Customer Bill";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerBill_FormClosing);
             this.Load += new System.EventHandler(this.CustomerBill_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,6 +615,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtTotalCharges;
         private System.Windows.Forms.Button btnDeleteCustomer;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
