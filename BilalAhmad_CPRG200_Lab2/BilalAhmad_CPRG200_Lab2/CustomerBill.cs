@@ -39,7 +39,6 @@ namespace BilalAhmad_CPRG200_Lab2
         {
             InitializeComponent();
 
-
             // When the form loads, Hide labels and Textboxes for peak and off peak hours.
             // because the default selection is residential.
             lblPeakHours.Visible = false;
@@ -173,10 +172,43 @@ namespace BilalAhmad_CPRG200_Lab2
                     customerType = "I";
                     customer = new IndustrialCustomer(accountNo, customerName, customerType, chargeAmount);
                 }
-                customers.Add(customer);
+                AddToList(customer);
                 DisplayCustomers();
                 Statistics();
             }
+        }
+
+        private void AddToList(Customer customer)
+        {
+            bool duplicated = true;
+            foreach (Customer c in customers)
+            {
+                string line = c.ToString();
+                string[] fields = line.Split(',');
+
+                if (Convert.ToInt32(fields[0]) == customer.accountNo &&
+                   string.Equals(string.Concat(fields[2].Where(d => !char.IsWhiteSpace(d))), // remove white space
+                   customer.customerType)) // checks if duplicate accountNo exists
+                {
+                    //don't add customer to the list
+                    MessageBox.Show("Account No can't be duplicated in same Customer Type");
+                    duplicated = true; // already exists
+                    break;
+                }
+                else
+                {
+                    // add customer                  
+                    duplicated = false;
+
+                }
+            }
+
+            if (duplicated == false)
+            {
+                customers.Add(customer);
+            }
+
+
         }
 
         private void Statistics()
@@ -186,11 +218,11 @@ namespace BilalAhmad_CPRG200_Lab2
             decimal indChargeAmount = 0;
             foreach (Customer customer in customers)
             {
-                string customerType = customer.customerType;                
+                string customerType = customer.customerType;
 
                 if (customerType == "R")
                 {
-                    
+
                     resChargeAmount += customer.chargeAmount;
                 }
                 else if (customerType == "C")
@@ -207,6 +239,35 @@ namespace BilalAhmad_CPRG200_Lab2
             txtTotalComCharges.Text = comChargeAmount.ToString("c");
             txtTotalIndCharges.Text = indChargeAmount.ToString("c");
             txtTotalCharges.Text = (TotalCumulativeCharges(resChargeAmount, comChargeAmount, indChargeAmount)).ToString("c");
+        }
+
+        private Customer GetSelectedCustomer()
+        {
+            Customer selectedCustomer = null; // no selection
+
+            int selectedIndex = lstCustomers.SelectedIndex; // selected customer 
+            if (selectedIndex < 0)// user did not select
+            {
+                MessageBox.Show("You need to select a Customer from the list");
+            }
+            else// user selects an account
+            {
+                selectedCustomer = customers[selectedIndex];
+            }
+
+            return selectedCustomer;
+        }
+        
+        //Deletes a customer
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            Customer customer = GetSelectedCustomer();
+            if(customer != null)
+            {
+                customers.Remove(customer);
+            }
+            DisplayCustomers();
+            Statistics();
         }
 
         private decimal TotalCumulativeCharges(decimal resChargeAmount, decimal comChargeAmount, decimal indChargeAmount)
@@ -257,8 +318,14 @@ namespace BilalAhmad_CPRG200_Lab2
         // this method, when triggered will close the form
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close(); // closes the current form
-            Environment.Exit(0); // since this app has multiple forms, this.close will only close the current form. environment.exit will close the whole app. 
+            DialogResult dr = MessageBox.Show("Are you sure you want to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+
+                this.Close();
+                Application.ExitThread();// closes the current form
+            }
+
         }
 
         // when residential radio button is checked
@@ -348,18 +415,11 @@ namespace BilalAhmad_CPRG200_Lab2
              e.Handled is a boolean that indicates that handling is done            
             if a bad character is entered, set e.Handled to true
             */
-           Validator.IsNameString(txtCustomerName, "Customer Name", e);
-            /*
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != '-' &&
-              e.KeyChar != '.' && e.KeyChar != (char)Keys.Back)
-            {
-                e.Handled = true;
-                MessageBox.Show("This field can only accept letters, space, - and .");
-            }
-            */
+            Validator.IsNameString(txtCustomerName, "Customer Name", e);
+
         }
 
-
+        
     }//ends customberbill class
 
 }//ends namespace

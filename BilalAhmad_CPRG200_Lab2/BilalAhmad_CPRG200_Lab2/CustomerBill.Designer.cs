@@ -65,6 +65,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTotalCharges = new System.Windows.Forms.TextBox();
+            this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,7 +162,7 @@
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Default;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 346);
+            this.label3.Location = new System.Drawing.Point(193, 330);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(185, 29);
             this.label3.TabIndex = 5;
@@ -171,7 +172,7 @@
             // 
             this.txtAmount.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(249, 343);
+            this.txtAmount.Location = new System.Drawing.Point(407, 327);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.ReadOnly = true;
             this.txtAmount.Size = new System.Drawing.Size(175, 34);
@@ -183,9 +184,9 @@
             this.btnCalculate.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalculate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCalculate.Location = new System.Drawing.Point(63, 268);
+            this.btnCalculate.Location = new System.Drawing.Point(19, 314);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(257, 60);
+            this.btnCalculate.Size = new System.Drawing.Size(161, 60);
             this.btnCalculate.TabIndex = 5;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = false;
@@ -198,7 +199,7 @@
             this.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClear.Location = new System.Drawing.Point(72, 387);
+            this.btnClear.Location = new System.Drawing.Point(72, 509);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(177, 57);
             this.btnClear.TabIndex = 7;
@@ -212,7 +213,7 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnClose.Location = new System.Drawing.Point(313, 387);
+            this.btnClose.Location = new System.Drawing.Point(313, 509);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(177, 57);
             this.btnClose.TabIndex = 8;
@@ -256,7 +257,7 @@
             this.lblOffPeakkwh.AutoSize = true;
             this.lblOffPeakkwh.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblOffPeakkwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOffPeakkwh.Location = new System.Drawing.Point(489, 224);
+            this.lblOffPeakkwh.Location = new System.Drawing.Point(489, 239);
             this.lblOffPeakkwh.Name = "lblOffPeakkwh";
             this.lblOffPeakkwh.Size = new System.Drawing.Size(60, 29);
             this.lblOffPeakkwh.TabIndex = 14;
@@ -267,7 +268,7 @@
             this.lblOffPeakHours.AutoSize = true;
             this.lblOffPeakHours.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblOffPeakHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOffPeakHours.Location = new System.Drawing.Point(14, 224);
+            this.lblOffPeakHours.Location = new System.Drawing.Point(14, 239);
             this.lblOffPeakHours.Name = "lblOffPeakHours";
             this.lblOffPeakHours.Size = new System.Drawing.Size(281, 25);
             this.lblOffPeakHours.TabIndex = 13;
@@ -277,7 +278,7 @@
             // 
             this.txtOffPeakHours.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtOffPeakHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOffPeakHours.Location = new System.Drawing.Point(318, 219);
+            this.txtOffPeakHours.Location = new System.Drawing.Point(318, 234);
             this.txtOffPeakHours.Name = "txtOffPeakHours";
             this.txtOffPeakHours.Size = new System.Drawing.Size(165, 34);
             this.txtOffPeakHours.TabIndex = 4;
@@ -286,7 +287,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Location = new System.Drawing.Point(195, 455);
+            this.label1.Location = new System.Drawing.Point(195, 577);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 17);
             this.label1.TabIndex = 15;
@@ -318,7 +319,7 @@
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.Default;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 90);
+            this.label4.Location = new System.Drawing.Point(14, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 25);
             this.label4.TabIndex = 18;
@@ -328,7 +329,7 @@
             // 
             this.txtAccountNo.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtAccountNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccountNo.Location = new System.Drawing.Point(140, 84);
+            this.txtAccountNo.Location = new System.Drawing.Point(140, 89);
             this.txtAccountNo.Name = "txtAccountNo";
             this.txtAccountNo.Size = new System.Drawing.Size(109, 34);
             this.txtAccountNo.TabIndex = 1;
@@ -337,7 +338,7 @@
             // 
             this.txtCustomerName.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.Location = new System.Drawing.Point(431, 84);
+            this.txtCustomerName.Location = new System.Drawing.Point(431, 89);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(165, 34);
             this.txtCustomerName.TabIndex = 2;
@@ -348,7 +349,7 @@
             this.label5.AutoSize = true;
             this.label5.Cursor = System.Windows.Forms.Cursors.Default;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(265, 90);
+            this.label5.Location = new System.Drawing.Point(265, 95);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(160, 25);
             this.label5.TabIndex = 20;
@@ -356,16 +357,16 @@
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAddCustomer.BackColor = System.Drawing.Color.Green;
             this.btnAddCustomer.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAddCustomer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAddCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCustomer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddCustomer.Location = new System.Drawing.Point(350, 268);
+            this.btnAddCustomer.Location = new System.Drawing.Point(357, 400);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(199, 60);
+            this.btnAddCustomer.Size = new System.Drawing.Size(225, 60);
             this.btnAddCustomer.TabIndex = 6;
-            this.btnAddCustomer.Text = "Add Customer";
+            this.btnAddCustomer.Text = "Add Customer >>";
             this.btnAddCustomer.UseVisualStyleBackColor = false;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
@@ -485,6 +486,21 @@
             this.txtTotalCharges.Size = new System.Drawing.Size(165, 34);
             this.txtTotalCharges.TabIndex = 33;
             // 
+            // btnDeleteCustomer
+            // 
+            this.btnDeleteCustomer.BackColor = System.Drawing.Color.Maroon;
+            this.btnDeleteCustomer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnDeleteCustomer.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnDeleteCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCustomer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(54, 400);
+            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(225, 60);
+            this.btnDeleteCustomer.TabIndex = 34;
+            this.btnDeleteCustomer.Text = "Delete Customer";
+            this.btnDeleteCustomer.UseVisualStyleBackColor = false;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
+            // 
             // CustomerBill
             // 
             this.AcceptButton = this.btnCalculate;
@@ -494,6 +510,7 @@
             this.CancelButton = this.btnClear;
             this.ClientSize = new System.Drawing.Size(1189, 622);
             this.ControlBox = false;
+            this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.txtTotalCharges);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -580,6 +597,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtTotalCharges;
+        private System.Windows.Forms.Button btnDeleteCustomer;
     }
 }
 
