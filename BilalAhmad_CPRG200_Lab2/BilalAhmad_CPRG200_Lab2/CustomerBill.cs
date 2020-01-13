@@ -113,6 +113,7 @@ namespace BilalAhmad_CPRG200_Lab2
              * This is seperated from the top if condition because industrial used peak and off-peak hours energy used rather than total energy used.
              * 
              */
+             
             else if (radIndustrial.Checked)
             {
                 // validates if peak hours and off peak hours fields have a value and that the value is a positive whole number.
@@ -199,7 +200,6 @@ namespace BilalAhmad_CPRG200_Lab2
                 {
                     // add customer                  
                     duplicated = false;
-
                 }
             }
 
@@ -207,8 +207,6 @@ namespace BilalAhmad_CPRG200_Lab2
             {
                 customers.Add(customer);
             }
-
-
         }
 
         private void Statistics()
@@ -416,6 +414,7 @@ namespace BilalAhmad_CPRG200_Lab2
             Statistics();
         }
 
+        //form
         private void CustomerBill_FormClosing(object sender, FormClosingEventArgs e)
         {
             CustomerDB.SaveCustomers(customers);

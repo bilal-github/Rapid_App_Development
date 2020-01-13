@@ -1,4 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿/*
+ * Author: Bilal Ahmad
+ * Description: Lab 2 Unit Tests for Industrial Customer Tests
+ */
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CustomerData;
 using System;
 using System.Collections.Generic;
@@ -53,8 +57,7 @@ namespace CustomerData.Tests
         [TestMethod()]
         public void CalculateOffPeakZeroAmount()
         {
-            //arrange
-           
+            //arrange           
             decimal offPeakBase = 40m;
             decimal unitRate = 0.028m;
             decimal energyUsed = 0;
@@ -81,10 +84,7 @@ namespace CustomerData.Tests
             decimal actualCharge = 0;
             IndustrialCustomer industrialCustomer = new IndustrialCustomer(1, "john", "I", actualCharge);
 
-            //act
-            /*energy used is -1000 because its a flat rate till 1000, any energy over 1000 will
-             * be charged at the unit rate
-             */
+            //act            
             actualCharge = industrialCustomer.CalculateCharge(offPeakBase, unitRate, energyUsed); 
 
             //assert

@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Author: Bilal Ahmad
+ * Description: Lab 2
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +12,13 @@ namespace CustomerData
 {
     public abstract class Customer
     {
+        //private variables
         private int _accountNo;
         private string _customerName;
         private string _customerType;
         private decimal _chargeAmount;
 
+        //public properties
         public int accountNo
         {
             get
@@ -58,13 +64,7 @@ namespace CustomerData
             }
         }
 
-
-        public Customer(int accountNo, string customerName)
-        {
-            this.accountNo = accountNo;
-            this.customerName = customerName;
-        }
-
+        //public constructor for Customer
         public Customer(int accountNo, string customerName, string customerType, decimal chargeAmount)
         {
             this.accountNo = accountNo;
@@ -73,40 +73,19 @@ namespace CustomerData
             this.chargeAmount = chargeAmount;
         }
 
-        /*
-        public string getCustomerType()
-        {
-
-            return this.customerType;
-        }
-
-        public decimal getChargeAmount()
-        {
-            return this.chargeAmount;
-        }
-
-        public int getAccountNo()
-        {
-            return this.accountNo;
-        }
-
-        public string getCustomerName()
-        {
-            return this.customerName;
-        }
-
-        */
+        //Calculate charge method is abstract, as its different for every inherited class. 
         public abstract decimal CalculateCharge(decimal basePrice, decimal unitRate, decimal energyUsed);
 
+        //To string method used by all inherited classes when adding customers to the List Box
         public override string ToString()
         {
             return accountNo.ToString() + " , " + customerName + " , " + customerType + " , " + chargeAmount.ToString();
         }
 
+        // To CSV method used by CustomerDB when saving data to a txt file. 
         public string ToCSV()
         {
             return accountNo.ToString() + "," + customerName + "," + customerType + "," + chargeAmount.ToString();
-
         }
     }
 }

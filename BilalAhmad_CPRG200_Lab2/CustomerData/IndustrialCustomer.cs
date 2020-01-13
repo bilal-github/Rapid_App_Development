@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Author: Bilal Ahmad
+ * Description: Lab 2
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,65 +12,27 @@ namespace CustomerData
 {
     public class IndustrialCustomer : Customer
     {
+        //private variables
         const decimal ENERGY_USED_UNDER_FLAT = 1000; // the threshold for energy used under flat, excess will be charged by the unit
-
-
         private decimal flatPrice;
         private decimal unitRate;
         private decimal energyExcess;
-        
-
         decimal energyUsed;
         decimal chargeAmount;
+
+        //public constructor
         public IndustrialCustomer(int accountNo, string customerName, string customerType, decimal chargeAmount) :
             base(accountNo, customerName, customerType, chargeAmount)
         {
-
         }
 
+        //calculate charge amount for Industrial (peak and offpeak), returns chargeAmount.
+        //uses the energy used passed by the Calculate charge method below.
         public decimal CalculateChargeAmount(decimal baseCharge, decimal unitRate, decimal energyUsed)
         {
             chargeAmount = baseCharge + (unitRate * energyUsed);
-
             return chargeAmount;
         }
-        /*
-        public decimal CalculatePeakEnergy(decimal peakBase, decimal peakUnitRate, decimal energyUsed)
-        {
-            this.industrialPeakFlatRate = peakBase;
-            this.peakUnitRate = peakUnitRate;
-            this.energyUsed = energyUsed;
-            if (energyUsed >= 1000)
-            {
-                peakEnergyExcess = energyUsed - 1000;
-                peakEnergyCharge = CalculateCharge(peakBase, peakUnitRate, peakEnergyExcess);
-            }
-            else
-            {
-                peakEnergyCharge = CalculateCharge(peakBase, peakUnitRate, energyUsed);
-            }
-
-            return peakEnergyCharge;
-        }
-        public decimal CalculateOffPeakEnergy(decimal offPeakBase, decimal offPeakUnitRate, decimal energyUsed)
-        {
-            this.industrialOffPeakFlatRate = offPeakBase;
-            this.offPeakUnitRate = offPeakUnitRate;
-            this.energyUsed = energyUsed;
-            if (energyUsed >= 1000)
-            {
-                offPeakEnergyExcess = energyUsed - 1000;
-                offPeakEnergyCharge = CalculateCharge(offPeakBase, peakUnitRate, peakEnergyExcess);
-            }
-            else
-            {
-                peakEnergyCharge = CalculateCharge(peakBase, peakUnitRate, energyUsed);
-            }
-
-            return peakEnergyCharge;
-        }
-        */ // peak and off peak methods
-
 
         //calculate charge amount based on the base price, unit rate and energyused
         public override decimal CalculateCharge(decimal peakOrOffPeakBaseCharge, decimal unitRate, decimal energyUsed)
@@ -74,12 +40,12 @@ namespace CustomerData
             this.flatPrice = peakOrOffPeakBaseCharge;
             this.unitRate = unitRate;
             this.energyUsed = energyUsed;
-            if (energyUsed >= ENERGY_USED_UNDER_FLAT)
+            if (energyUsed >= ENERGY_USED_UNDER_FLAT) // energy used is more than 1000kwh
             {
                 energyExcess = energyUsed - ENERGY_USED_UNDER_FLAT;
                 chargeAmount = CalculateChargeAmount(peakOrOffPeakBaseCharge, unitRate, energyExcess);
             }
-            else
+            else // energy used is less than 1000kwh
             {
                 energyUsed = 0;//if under 1000, the energy is used at a flat rate.
                 chargeAmount = CalculateChargeAmount(peakOrOffPeakBaseCharge, unitRate, energyUsed);

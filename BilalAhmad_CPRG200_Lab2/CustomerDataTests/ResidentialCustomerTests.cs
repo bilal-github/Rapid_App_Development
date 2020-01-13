@@ -1,4 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿/*
+ * Author: Bilal Ahmad
+ * Description: Lab 2 Unit Tests for Residential Customer Tests
+ */
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CustomerData;
 using System;
 using System.Collections.Generic;
@@ -11,21 +15,12 @@ namespace CustomerData.Tests
     [TestClass()]
     public class ResidentialCustomerTests
     {
-        //constructor test
-        /*
-        [TestMethod()]
-        public void ResidentialCustomerTest()
-        {
-            Assert.Fail();
-        }
-        */
-
+        
         //test calculate if the energy used is zero for residential customer type.
         [TestMethod()]
         public void CalculateChargeZeroAmount()
         {
             //arrange
-
             decimal resBase = 6m;
             decimal unitRate = 0.052m;
             decimal energyUsed = 0;
@@ -44,7 +39,6 @@ namespace CustomerData.Tests
         public void CalculateChargeMoreThanZero()
         {
             //arrange
-
             decimal resBase = 6m;
             decimal unitRate = 0.052m;
             decimal energyUsed = 100;

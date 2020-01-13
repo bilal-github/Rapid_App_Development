@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Bilal Ahmad
+ * Date: December 07, 2019
+ * Purpose: Welcome screen shows up first.
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +21,7 @@ namespace BilalAhmad_CPRG200_Lab2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Welcome());
+            Application.Run(new Welcome()); // Program starts Welcome.cs first
         }
     }
 }

@@ -1,4 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿/*
+ * Author: Bilal Ahmad
+ * Description: Lab 2 Unit Tests for Commercial Customer Tests
+ */
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CustomerData;
 using System;
 using System.Collections.Generic;
@@ -11,21 +15,11 @@ namespace CustomerData.Tests
     [TestClass()]
     public class CommercialCustomerTests
     {
-        /*
-        [TestMethod()]
-        public void CommercialCustomerTest()
-        {
-            Assert.Fail();
-        }
-        */
-
-
         //test calculate if the energy used is zero kwh for commercial customer type.
         [TestMethod()]
         public void CalculateChargeZeroAmount()
         {
             //arrange
-
             decimal comBase = 60m;
             decimal unitRate = 0.045m;
             decimal energyUsed = 0;
@@ -44,7 +38,6 @@ namespace CustomerData.Tests
         public void CalculateChargeZeroTo1000Amount()
         {
             //arrange
-
             decimal comBase = 60m;
             decimal unitRate = 0.045m;
             decimal energyUsed = 10;
