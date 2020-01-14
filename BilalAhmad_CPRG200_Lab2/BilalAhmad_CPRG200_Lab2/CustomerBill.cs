@@ -140,7 +140,7 @@ namespace BilalAhmad_CPRG200_Lab2
             displayAmount(chargeAmount);
         }
 
-        //Adds customer to the list
+        //Adds customer to the listBox
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             //local variables
@@ -179,9 +179,14 @@ namespace BilalAhmad_CPRG200_Lab2
             }
         }
 
+        //adds customer to the customers list
         private void AddToList(Customer customer)
         {
             bool duplicated = true;
+            if (customers.Count() == 0)
+            {
+                duplicated = false;
+            }
             foreach (Customer c in customers)
             {
                 string line = c.ToString();
@@ -209,6 +214,7 @@ namespace BilalAhmad_CPRG200_Lab2
             }
         }
 
+        //Sets the statistics under the listbox
         private void Statistics()
         {
             decimal resChargeAmount = 0;
@@ -239,6 +245,7 @@ namespace BilalAhmad_CPRG200_Lab2
             txtTotalCharges.Text = (TotalCumulativeCharges(resChargeAmount, comChargeAmount, indChargeAmount)).ToString("c");
         }
 
+        //gets the selected customer from the listbox 
         private Customer GetSelectedCustomer()
         {
             Customer selectedCustomer = null; // no selection
@@ -272,14 +279,11 @@ namespace BilalAhmad_CPRG200_Lab2
                     }
                     DisplayCustomers();
                     Statistics();
-
                 }
             }
-
-
-
         }
 
+        //gets the total charges, sum of all residential, commercial and industrial charges.
         private decimal TotalCumulativeCharges(decimal resChargeAmount, decimal comChargeAmount, decimal indChargeAmount)
         {
             decimal totalCumulativeCharges = resChargeAmount + comChargeAmount + indChargeAmount;
@@ -296,7 +300,6 @@ namespace BilalAhmad_CPRG200_Lab2
             foreach (Customer customer in customers)
             {
                 lstCustomers.Items.Add(customer); // implicitly calls to ToString();
-
             }
 
         }
@@ -331,11 +334,9 @@ namespace BilalAhmad_CPRG200_Lab2
             DialogResult dr = MessageBox.Show("Are you sure you want to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-
                 this.Close();
                 Application.ExitThread();// closes the current form
             }
-
         }
 
         // when residential radio button is checked

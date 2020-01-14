@@ -90,5 +90,6 @@ namespace CustomerData.Tests
             //assert
             Assert.AreEqual(expectedCharge, actualCharge);
         }
+        
     }
 }

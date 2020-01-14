@@ -45,10 +45,12 @@ namespace CustomerData
             string customerType = "";
             decimal chargeAmount;
 
+            //uses filestream to read the file
             using (FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read))
             {
                 using (StreamReader streamReader = new StreamReader(fileStream))
                 {
+                    //continues reading until the end of file is reached.
                     while (!streamReader.EndOfStream)
                     {
                         line = streamReader.ReadLine();
