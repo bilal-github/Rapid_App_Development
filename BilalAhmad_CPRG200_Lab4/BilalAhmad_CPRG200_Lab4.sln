@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilalAhmad_CPRG200_Lab4", "BilalAhmad_CPRG200_Lab4\BilalAhmad_CPRG200_Lab4.csproj", "{1EF9A755-F417-4146-8919-D69A5B8CA02A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{45642592-0692-4545-B29B-EE8C3B493121}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EF9A755-F417-4146-8919-D69A5B8CA02A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF9A755-F417-4146-8919-D69A5B8CA02A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF9A755-F417-4146-8919-D69A5B8CA02A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF9A755-F417-4146-8919-D69A5B8CA02A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45642592-0692-4545-B29B-EE8C3B493121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45642592-0692-4545-B29B-EE8C3B493121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45642592-0692-4545-B29B-EE8C3B493121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45642592-0692-4545-B29B-EE8C3B493121}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {225EB215-3122-4592-8891-DC72900FE763}
+	EndGlobalSection
+EndGlobal
