@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnNext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAZFJREFUWEft
+        lrlKxUAUhi9oobgUljbaCDaigpW9L2BjJ4Ig+hZ21jYurY3WPoCd2inYuGAlFlaC4FKI6PcnOTCMmSxj
+        BIV88HHPzD2cOzcnk0mnpeWvsoO9aVjIFvakYbN84jVOJ6MwyrvEiWTUICosX3BZEwEs7wkXNNEUVtjc
+        x0H08fMaa4kVXMLnLL7FGXSxvDV8y+IzHMMfYYXFCB6jxu+4jl0o3LxxvECNX3EFo3ELi27UD3+g5o9w
+        OIvdPO2cXbT5PezD2viFjXl8RH13n33m5bktOcfaLQkVFmrJCVpOKE9b+Ab1fe1dUlRYqCUbaC0JoZ1z
+        gFZvGyvtkrIFGHP4kIaF1G7Jby5AbZnCQsoWENsCxXkPtG8ULSDmJtS/X8XKhArHbMNKl9zHL9yPeqjY
+        vJ0Nft4QHqLN66EUdTa4hSfxCjXW6biIhps3i3eosc4PN682VjjmMIq65D5W2NzEvDckPy/6kvtYwaov
+        JLXv8jJU9BRHk1EY5ekI1lHcKFVfSrUbBtKwpeVf0ul8AZ50run85SOnAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAYBJREFUWEft
+        li9LBEEYhxc0KILBaNEiWEQNFrNfwGbSYtDkVzDZTYfVotkPYBOjYBHFJILN4B8sij4/b18YXnZ3Zpe9
+        E2EfeLi54b3fDTOzM5t1dPx3xrDXb1Yyjkf9Znss4A1+/34rZxlvMVZXiw18QYVWBW/jO8bqkrEpt8Cy
+        4Ek8wVhdLebwChX0gTt52wev4D2q/xW38ravq8Ue6k8Vco3zKMLgEdzHT1TfBc6gCOtqMYHHaAHayVoG
+        w/qn8Txvf6EGMoqG1dWiaMo9FvyYfz7jOnqsLplwl9/hEhZhwTKcco/VRPG7/BS1o8tQjab8AMMp9yQN
+        IGXKPU+41m9WkjQAnVia7j8bgNB0a9rtB0NdgpBdtOd+qJswJGVJLLj1x9Cwa9QCznAKDev3Z78OLx1i
+        hvU3ZhPfUCEPuIrCB6vObj9d1YsofF0jipakKHggl5Hhl6QsWHWHGKtrTPiUVAW3/kISoitZV3MseBYv
+        sfUBCDu4YgzkpbSjowWy7Adbpa7xN65N2QAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>
