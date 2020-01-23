@@ -22,7 +22,6 @@ namespace DataAccess
             Order order;
             try
             {
-
                 using (SqlConnection connection = GetConnection())
                 {
                     string query = "SELECT OrderID, CustomerID, OrderDate, RequiredDate, ShippedDate " +
@@ -36,17 +35,39 @@ namespace DataAccess
                             order = new Order();
                             order.OrderID = (int)reader["OrderID"];
                             order.CustomerID = reader["CustomerID"].ToString();
-                            order.RequiredDate = (DateTime)reader["RequiredDate"];
-                            order.OrderDate = (DateTime)reader["OrderDate"];
-                            order.ShippedDate = (DateTime)reader["ShippedDate"];
+                            if (reader["RequiredDate"] == DBNull.Value)
+                            {
+                                order.RequiredDate = null;
+                            }
+                            else
+                            {
+                                order.RequiredDate = Convert.ToDateTime(reader["RequiredDate"]);
+                            }
+                            if (reader["OrderDate"] == DBNull.Value)
+                            {
+                                order.OrderDate = null;
+                            }
+                            else
+                            {
+                                order.OrderDate = Convert.ToDateTime(reader["OrderDate"]);
+                            }
+                            if (reader["ShippedDate"] == DBNull.Value)
+                            {
+                                order.ShippedDate = null;
+                            }
+                            else
+                            {
+                                order.ShippedDate = Convert.ToDateTime(reader["ShippedDate"]);
+                            }
 
                             orders.Add(order);
                         }
                     }
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                
+                throw ex;
             }
             return orders;
         }
@@ -68,7 +89,7 @@ namespace DataAccess
                         while (reader.Read())
                         {
                             order = new Order();
-                            order.OrderID = (int)reader["OrderID"];                           
+                            order.OrderID = (int)reader["OrderID"];
 
                             orders.Add(order);
                         }
@@ -111,12 +132,12 @@ namespace DataAccess
                         order.ShippedDate = (DateTime)reader["ShippedDate"];
                     }
                 }
-            }         
+            }
 
             return order;
         }
 
-        public static void UpDateRecord(DateTime shippedDate, int order_ID, string CustomerID, DateTime OrderDate, DateTime RequiredDate)
+        public static void UpDateRecord(DateTime? shippedDate, int order_ID, string CustomerID, DateTime? OrderDate, DateTime? RequiredDate)
         {
             List<Order> orders = new List<Order>();
             Order order;
@@ -130,7 +151,15 @@ namespace DataAccess
                 using (SqlCommand command = new SqlCommand(updateQuery, connection))
                 {
                     connection.Open();
-                    command.Parameters.AddWithValue("ShippedDate", shippedDate);
+                    if (shippedDate == null)
+                    {
+                        command.Parameters.AddWithValue("ShippedDate", DBNull.Value);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("ShippedDate", shippedDate);
+                    }
+
                     command.Parameters.AddWithValue("OrderID", order_ID);
                     command.Parameters.AddWithValue("CustomerID", CustomerID);
                     command.Parameters.AddWithValue("OrderDate", OrderDate);
